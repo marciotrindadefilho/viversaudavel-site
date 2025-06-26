@@ -2,11 +2,10 @@ import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-export default function NossaMissaoPage() {
+export default function Mission() {
   return (
     <div className="bg-white text-gray-800">
       <Header />
-
       <main className="container mx-auto px-4 py-12 md:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
