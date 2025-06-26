@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 export default function Mission() {
   return (
@@ -38,7 +36,6 @@ export default function Mission() {
               </p>
             </div>
           </div>
-
         </div>
       </main>
 
