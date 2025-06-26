@@ -1,9 +1,64 @@
 import Image from "next/image";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
-export default function Mission() {
+export default function MissionPage() {
   return (
+
     <div className="bg-white text-gray-800">
       <Header />
+    const mission = [
+ <section className="relative py-20">
+       {/* Background Image */}
+       <div className="absolute inset-0 z-0">
+         <Image src="/dna1.jpg" alt="DNA Background" fill className="object-cover" />
+         <div className="absolute inset-0 bg-white/90" />
+       </div>
+ 
+       <div className="relative z-10 container mx-auto px-4">
+         <div className="grid lg:grid-cols-2 gap-12 items-center">
+           {/* Founder Image */}
+           <div className="flex justify-center">
+             <div className="relative">
+               <Image
+                 src="/geo.png"
+                 alt="Georgia Espinola Moura - Fundadora"
+                 width={400}
+                 height={500}
+                 className="rounded-lg shadow-lg"
+               />
+             </div>
+           </div>
+ 
+           {/* Content */}
+           <div className="space-y-6">
+             <div>
+              {}
+               <h2 className="text-4xl font-bold text-gray-800 mb-4">Nossa Missão</h2>
+               <p className="text-lg text-gray-600 leading-relaxed">
+                 Promover a saúde, autonomia e qualidade de vida de pessoas com mais de 50 anos, por meio da produção e
+                 divulgação de conteúdos científicos, acessíveis e atualizados em fisioterapia em geral e geriátrica. A
+                 Viver Saudável tem como objetivo primário capacitar cuidadores, profissionais da saúde e o próprio idoso
+                 com conhecimento prático baseado em evidências.
+               </p>
+             </div>
+             {}
+             <div>
+               <h3 className="text-2xl font-bold text-green-600 mb-4">Georgia Espinola Moura</h3>
+               <p className="text-sm text-gray-500 mb-4">Fisioterapeuta • Fundadora</p>
+               <p className="text-gray-600 leading-relaxed">
+                 Com mais de 14 anos de experiência na área da saúde, especialista em Fisioterapia Cardiorrespiratória
+                 pelo Instituto do Coração-INCOR/HCFMUSP com experiência em reabilitação funcional e promoção do
+                 bem-estar. Desde 2011, Georgia atua em João Pessoa – PB, em âmbito hospitalar e também com foco em
+                 fisioterapia domiciliar e reabilitação integrativa, especialmente voltada à população adulta e idosa.
+               </p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+    ]
+      
       <main className="container mx-auto px-4 py-12 md:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
@@ -36,6 +91,7 @@ export default function Mission() {
               </p>
             </div>
           </div>
+
         </div>
       </main>
 
