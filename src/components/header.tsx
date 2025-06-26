@@ -70,8 +70,7 @@ export default function Header() {
     },
     {
       title: "Mais",
-      submenu: [
-        { title: "Nossa Missão", href: "/mais/nossa-missao" }, 
+      submenu: [ 
         { title: "Blog", href: "/mais/blog" },
         { title: "Depoimentos", href: "/mais/depoimentos" },
       ],
