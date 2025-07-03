@@ -85,17 +85,19 @@ export default function Header() {
 
       <div className="container mx-auto px-4 py-4 relative z-10">
         <div className="flex items-center justify-between">
-          {/* Logo com efeito futurista */}
+          {/* Logo com efeito futurista e fundo transparente */}
           <Link href="/" className="flex items-center group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <Image
-                src="/logo-novo.png"
-                alt="Viver Saudável"
-                width={220}
-                height={70}
-                className="relative z-10 h-14 w-auto hover:scale-105 transition-transform duration-300"
-              />
+              <div className="relative z-10 logo-container">
+                <Image
+                  src="/logo-novo.png"
+                  alt="Viver Saudável"
+                  width={220}
+                  height={70}
+                  className="h-14 w-auto hover:scale-105 transition-transform duration-300 logo-transparent"
+                />
+              </div>
             </div>
           </Link>
 

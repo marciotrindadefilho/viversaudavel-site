@@ -3,9 +3,40 @@ import Image from "next/image"
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Ajustada para ficar totalmente visível */}
+      {/* Fundo gradiente que combina com a imagem DNA */}
       <div className="absolute inset-0 z-0">
-        <div className="relative w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/50 via-transparent to-slate-900/50"></div>
+
+        {/* Padrão de pontos para simular o espaço */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
+          <div
+            className="absolute top-1/3 right-1/3 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
+            style={{ animationDelay: "1s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-blue-300 rounded-full animate-pulse"
+            style={{ animationDelay: "2s" }}
+          ></div>
+          <div
+            className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-cyan-300 rounded-full animate-pulse"
+            style={{ animationDelay: "0.5s" }}
+          ></div>
+          <div
+            className="absolute top-1/2 left-1/6 w-1 h-1 bg-blue-500 rounded-full animate-pulse"
+            style={{ animationDelay: "1.5s" }}
+          ></div>
+          <div
+            className="absolute top-3/4 right-1/6 w-1 h-1 bg-cyan-500 rounded-full animate-pulse"
+            style={{ animationDelay: "2.5s" }}
+          ></div>
+        </div>
+      </div>
+
+      {/* Background Image - Centralizada sobre o fundo */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <div className="relative w-full max-w-4xl h-full">
           <Image
             src="/dna.jpg"
             alt="DNA Background"
@@ -16,13 +47,13 @@ export default function Hero() {
               objectPosition: "center center",
             }}
           />
-          {/* Overlay sutil para melhor contraste */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
         </div>
+        {/* Overlay sutil para melhor integração */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/20" />
       </div>
 
       {/* WhatsApp - Posicionado no canto inferior direito */}
-      <div className="absolute right-6 bottom-6 z-20">
+      <div className="absolute right-6 bottom-6 z-30">
         <a
           href="https://wa.me/5583999999999"
           target="_blank"
@@ -40,7 +71,7 @@ export default function Hero() {
       </div>
 
       {/* Efeitos visuais futuristas */}
-      <div className="absolute inset-0 z-5">
+      <div className="absolute inset-0 z-20">
         {/* Partículas flutuantes */}
         <div className="floating-particles">
           <div className="particle particle-1"></div>
@@ -59,7 +90,7 @@ export default function Hero() {
       </div>
 
       {/* Conteúdo mínimo - apenas efeitos visuais */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div className="relative z-25 text-center max-w-4xl mx-auto px-4">
         {/* Elemento decorativo central */}
         <div className="hero-center-element">
           <div className="pulse-ring"></div>
