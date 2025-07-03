@@ -1,101 +1,90 @@
-import Image from "next/image";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import { Card, CardContent } from "@/components/ui/card"
+import { Heart, Target, Users, Award } from "lucide-react"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function MissionPage() {
   return (
-
     <div className="bg-white text-gray-800">
       <Header />
-    const mission = [
- <section className="relative py-20">
-       {/* Background Image */}
-       <div className="absolute inset-0 z-0">
-         <Image src="/dna1.jpg" alt="DNA Background" fill className="object-cover" />
-         <div className="absolute inset-0 bg-white/90" />
-       </div>
- 
-       <div className="relative z-10 container mx-auto px-4">
-         <div className="grid lg:grid-cols-2 gap-12 items-center">
-           {/* Founder Image */}
-           <div className="flex justify-center">
-             <div className="relative">
-               <Image
-                 src="/geo.png"
-                 alt="Georgia Espinola Moura - Fundadora"
-                 width={400}
-                 height={500}
-                 className="rounded-lg shadow-lg"
-               />
-             </div>
-           </div>
- 
-           {/* Content */}
-           <div className="space-y-6">
-             <div>
-              {}
-               <h2 className="text-4xl font-bold text-gray-800 mb-4">Nossa Missão</h2>
-               <p className="text-lg text-gray-600 leading-relaxed">
-                 Promover a saúde, autonomia e qualidade de vida de pessoas com mais de 50 anos, por meio da produção e
-                 divulgação de conteúdos científicos, acessíveis e atualizados em fisioterapia em geral e geriátrica. A
-                 Viver Saudável tem como objetivo primário capacitar cuidadores, profissionais da saúde e o próprio idoso
-                 com conhecimento prático baseado em evidências.
-               </p>
-             </div>
-             {}
-             <div>
-               <h3 className="text-2xl font-bold text-green-600 mb-4">Georgia Espinola Moura</h3>
-               <p className="text-sm text-gray-500 mb-4">Fisioterapeuta • Fundadora</p>
-               <p className="text-gray-600 leading-relaxed">
-                 Com mais de 14 anos de experiência na área da saúde, especialista em Fisioterapia Cardiorrespiratória
-                 pelo Instituto do Coração-INCOR/HCFMUSP com experiência em reabilitação funcional e promoção do
-                 bem-estar. Desde 2011, Georgia atua em João Pessoa – PB, em âmbito hospitalar e também com foco em
-                 fisioterapia domiciliar e reabilitação integrativa, especialmente voltada à população adulta e idosa.
-               </p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </section>
-    ]
-      
-      <main className="container mx-auto px-4 py-12 md:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
-          {/* Coluna da Imagem */}
-          <div className="flex justify-center">
-            <Image
-              src="/geo.png" // Garanta que a imagem 'geo.png' está na pasta 'public' do seu projeto
-              alt="Georgia Espinola Moura - Fundadora da Viver Saudável"
-              width={450}
-              height={550}
-              className="rounded-lg shadow-2xl object-cover"
-              priority // Ajuda a carregar a imagem principal mais rápido
-            />
-          </div>
-
-          {/* Coluna do Texto */}
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-green-600">
-              Nossa Missão
-            </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Promover a saúde, autonomia e qualidade de vida de pessoas com mais de 50 anos, por meio da produção e divulgação de conteúdos científicos, acessíveis e atualizados em fisioterapia em geral e geriátrica. A Viver Saudável tem como objetivo primário capacitar cuidadores, profissionais da saúde e o próprio idoso com conhecimento prático baseado em evidências.
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+        {/* Hero Section */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto text-center">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">Nossa Missão</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Democratizar o conhecimento em fisioterapia cardiorrespiratória, oferecendo conteúdo de qualidade e
+              acessível para profissionais e estudantes que desejam transformar vidas através da saúde.
             </p>
-            <div className="pt-4">
-              <h3 className="text-2xl font-bold text-gray-800">
-                Georgia Espinola Moura
-              </h3>
-              <p className="text-md text-green-600">
-                Fisioterapeuta • Fundadora
-              </p>
+          </div>
+        </section>
+
+        {/* Valores Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Nossos Valores</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Heart className="h-12 w-12 text-red-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">Cuidado</h3>
+                  <p className="text-gray-600">Cada conteúdo é desenvolvido pensando no bem-estar dos pacientes</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Target className="h-12 w-12 text-blue-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">Precisão</h3>
+                  <p className="text-gray-600">Informações baseadas em evidências científicas atualizadas</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Users className="h-12 w-12 text-green-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">Comunidade</h3>
+                  <p className="text-gray-600">Construindo uma rede de profissionais comprometidos</p>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <Award className="h-12 w-12 text-purple-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">Excelência</h3>
+                  <p className="text-gray-600">Compromisso com a qualidade em cada material produzido</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
+        </section>
 
-        </div>
-      </main>
-
+        {/* Nossa História */}
+        <section className="py-16 px-4 bg-white">
+          <div className="container mx-auto">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Nossa História</h2>
+              <div className="prose prose-lg mx-auto text-gray-600">
+                <p className="text-lg leading-relaxed mb-6">
+                  O <strong>Viver Saudável</strong> nasceu da necessidade de tornar o conhecimento especializado em
+                  fisioterapia cardiorrespiratória mais acessível. Percebemos que muitos profissionais e estudantes
+                  enfrentavam dificuldades para encontrar material de qualidade e atualizado na área.
+                </p>
+                <p className="text-lg leading-relaxed mb-6">
+                  Nossa plataforma foi criada para preencher essa lacuna, oferecendo e-books e audiobooks desenvolvidos
+                  por especialistas, com linguagem clara e aplicação prática no dia a dia clínico.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Acreditamos que o conhecimento deve ser acessível a todos, por isso trabalhamos para oferecer conteúdo
+                  de alta qualidade a preços justos, contribuindo para a formação de profissionais mais capacitados e,
+                  consequentemente, para melhores resultados na saúde dos pacientes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
       <Footer />
     </div>
-  );
+  )
 }

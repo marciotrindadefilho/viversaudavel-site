@@ -1,0 +1,13 @@
+
+
+conversa sobre projeto viversaudavel, com IA - V0
+
+V0,
+Sou Marcio Trindade, tenho um projeto ativo no vercel, conectado ao supabase, não sou programador, estou apredendo, estou com notebook Acer Aspire ES 15, meu projeto é para um site monetizado, para ebooks e audiobooks, para fisioterapia cardiorrespiratoria, não tenho recurso para envestir, tem de ser tudo no FREE, kkkk.
+O V0, montou esse projeto para mim, em 19/06/25, estamos na luta, para rodar, entao peço para economizar os creditos que tenho que foi o unico investimento que consegui fazer.
+Projeto " viversaudavel-site"
+caminho fisico C:\users\marci\viversaudavel-site
+Github - Main (principal)
+Supabase conectado, falta testar.
+
+Pasta (esquema) - viversaudavel/.next/.gitinit/components/node_modules/public> imagens/src/app> audiobooks>biblioteca> loading>page/carrinho>page.tsx/checkout>page.tsx/e-books>biblioteca>loading>page.tsx/entrar>page.tsx/hooks> use-mobile>use-toast/lib>supabaseclient> utils/mais> blog>loading/page.tsx/depoimentos> page.tsx/nossa-missão>page.tsx/planos>page.tsx/registro>page.tsx/styles>globals.css/favicon(vercel)/globals.css/layout(typescript)/page(typescript)
