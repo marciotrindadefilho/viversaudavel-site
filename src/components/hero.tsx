@@ -1,16 +1,27 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image - Ajustada para ficar totalmente visível */}
       <div className="absolute inset-0 z-0">
-        <Image src="/dna.jpg" alt="DNA Background" fill className="object-cover hero-image" priority />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative w-full h-full">
+          <Image
+            src="/dna.jpg"
+            alt="DNA Background"
+            fill
+            className="object-contain hero-image"
+            priority
+            style={{
+              objectPosition: "center center",
+            }}
+          />
+          {/* Overlay sutil para melhor contraste */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
+        </div>
       </div>
 
-      {/* WhatsApp - Right Side (Moved from left) */}
+      {/* WhatsApp - Posicionado no canto inferior direito */}
       <div className="absolute right-6 bottom-6 z-20">
         <a
           href="https://wa.me/5583999999999"
@@ -28,29 +39,32 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Content - Only Buttons */}
+      {/* Efeitos visuais futuristas */}
+      <div className="absolute inset-0 z-5">
+        {/* Partículas flutuantes */}
+        <div className="floating-particles">
+          <div className="particle particle-1"></div>
+          <div className="particle particle-2"></div>
+          <div className="particle particle-3"></div>
+          <div className="particle particle-4"></div>
+          <div className="particle particle-5"></div>
+        </div>
+
+        {/* Linhas de energia */}
+        <div className="energy-lines">
+          <div className="energy-line energy-line-1"></div>
+          <div className="energy-line energy-line-2"></div>
+          <div className="energy-line energy-line-3"></div>
+        </div>
+      </div>
+
+      {/* Conteúdo mínimo - apenas efeitos visuais */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg px-8 py-4"
-            style={{
-              background: "linear-gradient(135deg, #059669 0%, #047857 50%, #065f46 100%)",
-              boxShadow: "0 4px 15px rgba(5, 150, 105, 0.4)",
-            }}
-          >
-            Explorar E-books
-          </Button>
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg px-8 py-4"
-            style={{
-              background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%)",
-              boxShadow: "0 4px 15px rgba(37, 99, 235, 0.4)",
-            }}
-          >
-            Saiba Mais
-          </Button>
+        {/* Elemento decorativo central */}
+        <div className="hero-center-element">
+          <div className="pulse-ring"></div>
+          <div className="pulse-ring pulse-ring-delay-1"></div>
+          <div className="pulse-ring pulse-ring-delay-2"></div>
         </div>
       </div>
     </section>
