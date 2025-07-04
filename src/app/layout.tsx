@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Viver Saudável",
-  description: "Plataforma especializada em fisioterapia e saúde para pessoas com mais de 50 anos.",
+  description: "Especialistas em saúde e bem-estar para pessoas com mais de 50 anos.",
 }
 
 export default function RootLayout({
@@ -19,13 +19,13 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={inter.className}>
         {children}
-        {/* WhatsApp fixo no canto inferior direito */}
+        {/* WhatsApp flutuante fixo */}
         <div className="fixed bottom-6 right-6 z-50">
           <a
             href="https://wa.me/5583999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-110 transform transition-transform"
+            className="block w-16 h-16 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-110 transform transition-transform whatsapp-float"
           >
             <img src="/social1.jpg" alt="WhatsApp" className="w-full h-full rounded-full object-cover" />
           </a>

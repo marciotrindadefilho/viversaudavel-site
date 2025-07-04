@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Fundo gradiente que combina com a imagem DNA */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
@@ -34,9 +34,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Background Image - Centralizada sobre o fundo */}
+      {/* Background Image - Limitada em altura para não invadir próxima seção */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
-        <div className="relative w-full max-w-4xl h-full">
+        <div className="relative w-full max-w-5xl h-4/5">
           <Image
             src="/dna.jpg"
             alt="DNA Background"
@@ -49,25 +49,7 @@ export default function Hero() {
           />
         </div>
         {/* Overlay sutil para melhor integração */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/20" />
-      </div>
-
-      {/* WhatsApp - Posicionado no canto inferior direito */}
-      <div className="absolute right-6 bottom-6 z-30">
-        <a
-          href="https://wa.me/5583999999999"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-16 h-16 hover:scale-110 transition-transform duration-300 whatsapp-float"
-        >
-          <Image
-            src="/social1.jpg"
-            alt="WhatsApp"
-            width={64}
-            height={64}
-            className="rounded-full shadow-lg hover:shadow-xl transition-shadow"
-          />
-        </a>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/30" />
       </div>
 
       {/* Efeitos visuais futuristas */}

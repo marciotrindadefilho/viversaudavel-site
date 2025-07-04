@@ -1,127 +1,108 @@
 import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MapPin, Phone, Mail } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    <footer id="contato" className="bg-black text-white py-16">
+    <footer className="bg-black text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Logo and Social */}
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Logo e WhatsApp */}
           <div className="space-y-4">
-            <div className="flex items-center">
-              <Link href="/" className="hover:scale-110 transition-transform">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/img2-39nAMWcNXe6aKGT0dbysisuSPAG6XZ.png"
-                  alt="Viver Saudável"
-                  width={120}
-                  height={60}
-                  className="rounded"
-                />
-              </Link>
+            <div className="footer-logo-container">
+              <Image src="/img-novo.png" alt="Viver Saudável" width={150} height={50} className="footer-logo" />
             </div>
-            <div className="flex space-x-4">
-              <Link href="#" className="hover:scale-110 transition-transform">
-                <Image src="/social.jpg" alt="Redes Sociais" width={200} height={40} className="rounded" />
-              </Link>
-            </div>
+            <p className="text-sm text-gray-400">E-BOOKS</p>
           </div>
 
           {/* Links Rápidos */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-green-400">Links Rápidos</h3>
-            <ul className="space-y-2">
+            <h3 className="text-green-400 font-semibold mb-4">Links Rápidos</h3>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/sobre-nos" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Sobre Nós
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/ebooks" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Nossos Ebooks
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Blog
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/depoimentos" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Depoimentos
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
           {/* Categorias */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-green-400">Categorias</h3>
-            <ul className="space-y-2">
+            <h3 className="text-green-400 font-semibold mb-4">Categorias</h3>
+            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/exercicios" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Exercícios
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/nutricao" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Nutrição
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/saude-mental" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Saúde Mental
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/prevencao" className="hover:text-green-400 transition-colors">
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Prevenção
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
 
           {/* Contato e Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-green-400">Contato</h3>
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-4 h-4 text-green-400" />
-                <p>João Pessoa, PB</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-green-400" />
-                <p>(83) 9 9910-5011</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-green-400" />
-                <p>contato@viversaudavel.com</p>
-              </div>
+            <h3 className="text-green-400 font-semibold mb-4">Contato</h3>
+            <div className="space-y-2 text-sm text-gray-300 mb-4">
+              <p>📍 João Pessoa, PB</p>
+              <p>📞 (83) 9 9910-5011</p>
+              <p>✉️ contato@viversaudavel.com</p>
             </div>
 
-            <h4 className="font-semibold mb-2 text-green-400">Newsletter</h4>
-            <p className="text-sm mb-3">Receba dicas de saúde semanalmente</p>
-            <div className="flex space-x-2">
-              <Input type="email" placeholder="Seu e-mail" className="bg-gray-800 border-gray-700 text-white" />
-              <Button className="bg-green-600 hover:bg-green-700">OK</Button>
+            <div className="space-y-3">
+              <h4 className="text-green-400 font-medium">Newsletter</h4>
+              <p className="text-xs text-gray-400">Receba dicas de saúde semanalmente</p>
+              <div className="flex space-x-2">
+                <Input
+                  type="email"
+                  placeholder="Seu e-mail"
+                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-500 text-sm"
+                />
+                <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 text-sm">OK</Button>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-gray-400 mb-4 md:mb-0">
-              © 2025 Viver Saudável. Todos os direitos reservados. Fundada por Georgia Espinola Moura.
-            </p>
-            <div className="flex space-x-4">
-              <Link href="/" className="text-sm text-gray-400 hover:text-green-400 transition-colors">
-                Acesso Rápido
-              </Link>
-            </div>
-          </div>
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-gray-400 text-sm">
+            © 2025 Viver Saudável. Todos os direitos reservados. Fundada por Georgia Espínola Moura.
+          </p>
+          <p className="text-gray-500 text-xs mt-2">
+            <a href="#" className="hover:text-white transition-colors">
+              Acessibilidade
+            </a>
+          </p>
         </div>
       </div>
     </footer>
