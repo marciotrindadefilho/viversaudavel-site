@@ -71,7 +71,7 @@ export default function Header() {
     {
       title: "Mais",
       submenu: [
-        { title: "Nossa Missão", href: "/mais/nossa-missao" },
+        { title: "Nossa História", href: "/mais/nossa-historia" },
         { title: "Blog", href: "/mais/blog" },
         { title: "Depoimentos", href: "/mais/depoimentos" },
       ],

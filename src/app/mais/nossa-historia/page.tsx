@@ -1,18 +1,23 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Heart, Target, Users, Award } from "lucide-react"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Star, Quote, Heart, Users, Award, CheckCircle, Target } from "lucide-react"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 export default function NossaHistoria() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      <div className="min-h-screen">
+        <Header />
+
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Texto */}
             <div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">Nossa Missão</h1>
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">Nossa História</h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Promover a saúde, autonomia e qualidade de vida de pessoas com mais de 50 anos, por meio da produção e
                 divulgação de conteúdos científicos, acessíveis e atualizados em fisioterapia em geral e geriátrica.

@@ -25,10 +25,11 @@ export default function BlogPage() {
       title: "5 Exercícios Essenciais para Manter a Mobilidade após os 50",
       excerpt:
         "Descubra exercícios simples que podem ser feitos em casa para manter suas articulações saudáveis e flexíveis, promovendo maior independência e qualidade de vida.",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fisio4-pYlg0M963NhPZs88CgKtOmhSvQbDmy.png",
+      image: "/nutri2.jpeg",
+      rating: 4.7,
       date: "15 Jan 2025",
       category: "Exercícios",
-      author: "Georgia Espinola Moura",
+      author: "Dra. Geórgia Espinola Moura",
       readTime: "8 min",
       featured: true,
     },
@@ -36,10 +37,11 @@ export default function BlogPage() {
       title: "Alimentação Anti-inflamatória: O que Incluir no seu Prato",
       excerpt:
         "Conheça os alimentos que ajudam a reduzir a inflamação no corpo e promovem o envelhecimento saudável, com receitas práticas e dicas nutricionais.",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nutri2-hEKXcnlDb0GltMcq8KnJKj8wYtZb9D.png",
+      image: "/nutri.jpeg",
+      rating: 4.7,
       date: "12 Jan 2025",
       category: "Nutrição",
-      author: "Dra. Ana Costa",
+      author: "Dra. Giovanna Espinola Moura",
       readTime: "6 min",
       featured: true,
     },
@@ -47,10 +49,11 @@ export default function BlogPage() {
       title: "Técnicas de Respiração para Reduzir o Estresse",
       excerpt:
         "Aprenda técnicas simples de respiração que podem ajudar a controlar a ansiedade e melhorar seu bem-estar mental e físico.",
-      image: "/fisio8.png",
+      image: "/fisio4.png",
+      rating: 4.7,
       date: "10 Jan 2025",
       category: "Saúde Mental",
-      author: "Dr. Carlos Lima",
+      author: "Dra. Geórgia Espinola Moura",
       readTime: "5 min",
       featured: false,
     },
@@ -58,10 +61,11 @@ export default function BlogPage() {
       title: "Prevenção de Quedas: Estratégias Eficazes para Idosos",
       excerpt:
         "Dicas práticas e exercícios específicos para melhorar o equilíbrio e prevenir quedas, mantendo a segurança e independência.",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cor1-OegWOEIsmHdF6dASgvE3gjbYyQNs3D.png",
+      image: "/nutri2.jpeg",
+      rating: 4.7,
       date: "08 Jan 2025",
       category: "Prevenção",
-      author: "Georgia Espinola Moura",
+      author: "Dra. Geórgia Espinola Moura",
       readTime: "7 min",
       featured: false,
     },
@@ -69,10 +73,11 @@ export default function BlogPage() {
       title: "Fisioterapia Respiratória: Benefícios e Técnicas",
       excerpt:
         "Entenda como a fisioterapia respiratória pode melhorar sua capacidade pulmonar e qualidade de vida, especialmente após os 50 anos.",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nutri3-UH9YKFWIEtaIEWjdi8cBdeLiLKlevw.png",
+      image: "/fisio11.jpg",
+      rating: 4.7,
       date: "05 Jan 2025",
       category: "Reabilitação",
-      author: "Prof. Maria Santos",
+      author: "Dra. Geórgia Espinola moura",
       readTime: "9 min",
       featured: false,
     },
@@ -80,7 +85,7 @@ export default function BlogPage() {
       title: "Hidratação na Terceira Idade: Importância e Dicas",
       excerpt:
         "Saiba por que a hidratação adequada é crucial para idosos e como manter níveis ideais de hidratação no dia a dia.",
-      image: "/fisio8.png",
+      image: "/fisio5.png",
       date: "03 Jan 2025",
       category: "Geriatria",
       author: "Dra. Paula Oliveira",
@@ -97,7 +102,7 @@ export default function BlogPage() {
       <section className="relative py-20">
         <div className="absolute inset-0 z-0">
           <Image src="/dna4.jpg" alt="Background" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-blue-600/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-green-600/80" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -277,18 +282,18 @@ export default function BlogPage() {
       <section className="py-20 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6">Não Perca Nenhum Artigo!</h2>
+            <h2 className="text-4xl font-bold mb-6">Não Perca Nenhum dos Nossos Produtos!</h2>
             <p className="text-xl mb-8 opacity-90">
-              Receba nossos melhores conteúdos diretamente no seu e-mail. Sem spam, apenas conhecimento de qualidade.
+              Receba nossos E-books e Audiobooks no seu e-mail, e fique por dentro dos melhores conteudos e atualizados.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <Input type="email" placeholder="Seu melhor e-mail" className="bg-white text-gray-800 border-0 h-12" />
               <Button className="bg-yellow-500 hover:bg-yellow-600 text-gray-800 font-semibold h-12 px-8">
-                Assinar Grátis
+                Assine Agora!
               </Button>
             </div>
             <p className="text-sm opacity-75 mt-4">
-              📧 Mais de 10.000 pessoas já recebem nossos conteúdos semanalmente
+                Seja mais um a receber nossos Produtos semanalmente!
             </p>
           </div>
         </div>
