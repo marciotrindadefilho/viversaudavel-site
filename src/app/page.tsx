@@ -6,6 +6,7 @@ import Ebooks from "@/components/ebooks"
 import Blog from "@/components/blog"
 import Testimonials from "@/components/testimonials"
 import Footer from "@/components/footer"
+import Audiobooks from "@/components/audiobooks"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Mission />
       <Values />
       <Ebooks />
+      <Audiobooks />
       <Blog />
       <Testimonials />
       <Footer />
