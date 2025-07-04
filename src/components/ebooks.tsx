@@ -8,17 +8,20 @@ export default function Ebooks() {
   const ebooks = [
     {
       title: "Alimentação Saudável +50",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cor1-OegWOEIsmHdF6dASgvE3gjbYyQNs3D.png",
+      image: "/nutri.jpeg",
+      rating: 4.9,
       description: "Guia completo para uma alimentação equilibrada na maturidade",
     },
     {
       title: "Saúde Mental na Maturidade",
-      image: "/fisio8.png",
+      image: "/nutri1.jpeg",
+      rating: 4.8,
       description: "Estratégias para manter o bem-estar mental após os 50 anos",
     },
     {
       title: "Exercícios para Seniors",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nutri3-UH9YKFWIEtaIEWjdi8cBdeLiLKlevw.png",
+      image: "/nutri2.jpeg",
+      rating: 4.7,
       description: "Programa de exercícios adaptados para a terceira idade",
     },
   ]
