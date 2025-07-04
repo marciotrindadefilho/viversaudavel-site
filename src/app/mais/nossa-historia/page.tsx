@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Heart, Target, Users, Award } from "lucide-react"
 import Image from "next/image"
 
-export default function NossaMissao() {
+export default function NossaHistoria() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
       {/* Hero Section */}
