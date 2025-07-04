@@ -17,14 +17,15 @@ export default function NossaHistoria() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Texto */}
             <div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">Nossa História</h1>
+              <h1 className="text-5xl font-bold text-gray-900 mb-6">Nossa Expertise</h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Promover a saúde, autonomia e qualidade de vida de pessoas com mais de 50 anos, por meio da produção e
-                divulgação de conteúdos científicos, acessíveis e atualizados em fisioterapia em geral e geriátrica.
+                Com formação em Fisioterapia, especialista Fisioterapia Cardiorrespiratória pelo Instituto do Coração- INCOR/HCFMUSP,
+                anos de experiência na área hospitalar, reabilitação motora, neurológica, pós-operatório em geral, cardiopulmonar, 
+                como também em geriatria, oferecemos conteúdo confiável e prático baseado em ciência para uma vida mais saudável e ativa.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                A Viver Saudável tem como objetivo primário capacitar cuidadores, profissionais da saúde e o próprio
-                idoso com conhecimento prático baseado em evidências.
+                A Viver Saudável tem como principal missão desenvolver produtos como e-books e audiobooks,
+                baseados em estudos e conhecimentos teórico-práticos, sempre fundamentados em evidências científicas.
               </p>
             </div>
 
@@ -101,9 +102,9 @@ export default function NossaHistoria() {
                 por especialistas, com linguagem clara e aplicação prática no dia a dia clínico.
               </p>
               <p className="text-lg leading-relaxed">
-                Acreditamos que o conhecimento deve ser acessível a todos, por isso trabalhamos para oferecer conteúdo
-                de alta qualidade a preços justos, contribuindo para a formação de profissionais mais capacitados e,
-                consequentemente, para melhores resultados na saúde dos pacientes.
+                Acreditamos que o conhecimento deve ser acessível a todos. Por isso, nos dedicamos a oferecer 
+                conteúdos de alta qualidade por preços justos, contribuindo para a formação de profissionais 
+                mais preparados e, assim, promovendo melhores resultados na saúde dos pacientes
               </p>
             </div>
           </div>
@@ -113,7 +114,7 @@ export default function NossaHistoria() {
       {/* Call to Action */}
       <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-green-600 text-white">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Faça Parte da Nossa Missão</h2>
+          <h2 className="text-3xl font-bold mb-6">Faça Parte da Nossa História</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Junte-se a centenas de profissionais que já transformaram sua prática com nossos materiais especializados.
           </p>

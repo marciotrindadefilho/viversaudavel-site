@@ -11,7 +11,6 @@ export default function Blog() {
       excerpt:
         "Descubra exercícios simples que podem ser feitos em casa para manter suas articulações saudáveis e flexíveis.",
       image: "/nutri2.jpeg",
-      rating: 4.7,
       date: "15 Jan 2025",
       category: "Exercícios",
     },
@@ -19,7 +18,6 @@ export default function Blog() {
       title: "Alimentação Anti-inflamatória: O que Incluir no seu Prato",
       excerpt: "Conheça os alimentos que ajudam a reduzir a inflamação no corpo e promovem o envelhecimento saudável.",
       image: "/nutri.jpeg",
-      rating: 4.9,
       date: "12 Jan 2025",
       category: "Nutrição",
     },
@@ -28,7 +26,6 @@ export default function Blog() {
       excerpt:
         "Aprenda técnicas simples de respiração que podem ajudar a controlar a ansiedade e melhorar seu bem-estar.",
       image: "/nutri1.jpeg",
-      rating: 4.8,
       date: "10 Jan 2025",
       category: "Saúde Mental",
     },
