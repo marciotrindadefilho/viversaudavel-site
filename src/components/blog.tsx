@@ -10,14 +10,16 @@ export default function Blog() {
       title: "5 Exercícios Essenciais para Manter a Mobilidade após os 50",
       excerpt:
         "Descubra exercícios simples que podem ser feitos em casa para manter suas articulações saudáveis e flexíveis.",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fisio4-pYlg0M963NhPZs88CgKtOmhSvQbDmy.png",
+      image: "/nutri2.jpeg",
+      rating: 4.7,
       date: "15 Jan 2025",
       category: "Exercícios",
     },
     {
       title: "Alimentação Anti-inflamatória: O que Incluir no seu Prato",
       excerpt: "Conheça os alimentos que ajudam a reduzir a inflamação no corpo e promovem o envelhecimento saudável.",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nutri2-hEKXcnlDb0GltMcq8KnJKj8wYtZb9D.png",
+      image: "/nutri.jpeg",
+      rating: 4.9,
       date: "12 Jan 2025",
       category: "Nutrição",
     },
@@ -25,7 +27,8 @@ export default function Blog() {
       title: "Técnicas de Respiração para Reduzir o Estresse",
       excerpt:
         "Aprenda técnicas simples de respiração que podem ajudar a controlar a ansiedade e melhorar seu bem-estar.",
-      image: "/fisio8.png",
+      image: "/nutri1.jpeg",
+      rating: 4.8,
       date: "10 Jan 2025",
       category: "Saúde Mental",
     },

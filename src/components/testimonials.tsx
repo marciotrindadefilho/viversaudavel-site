@@ -6,19 +6,22 @@ export default function Testimonials() {
       name: "Maria Silva",
       age: "62 anos",
       text: "Os e-books da Viver Saudável mudaram minha perspectiva sobre envelhecimento. Agora me sinto mais confiante para cuidar da minha saúde.",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/fisio8.png",
+      rating: 4.8,
     },
     {
       name: "João Santos",
       age: "58 anos",
       text: "Como cuidador da minha mãe, encontrei informações valiosas que me ajudaram muito no dia a dia. Conteúdo de qualidade e fácil de entender.",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/dna4.jpg",
+      rating: 4.8,
     },
     {
       name: "Ana Costa",
       age: "65 anos",
       text: "Excelente material! A linguagem é clara e as dicas são práticas. Recomendo para todos que querem envelhecer com saúde e dignidade.",
-      image: "/placeholder.svg?height=80&width=80",
+      image: "/nutri.jpeg",
+      rating: 4.8,
     },
   ]
 
