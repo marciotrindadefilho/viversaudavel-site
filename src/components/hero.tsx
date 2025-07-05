@@ -34,25 +34,25 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Imagem de fundo */}
-      <div className="absolute inset-0 z-0 object-cover">
-        <div className="relative w-full max-w-5xl h-4/5">
-          <Image
-            src="/dna.jpg"
-            alt="imagem de fundo"
-            fill
-            className="object-contain hero-image"
-            priority
-            style={{
-              objectPosition: "center center",
-            }}
-          />
-        </div>
-        {/* Overlay sutil para melhor integração */}
+      {/* Background Image - Agora estendida para preencher toda a seção */}
+      {/* Mudei o z-index para 5 para ficar atrás dos efeitos, mas acima dos gradientes base */}
+      <div className="absolute inset-0 z-5">
+        <Image
+          src="/dna.jpg"
+          alt="DNA Background"
+          fill
+          className="object-cover" // Use object-cover para que a imagem preencha o container, cortando se necessário
+          priority
+          style={{
+            objectPosition: "center center",
+          }}
+        />
+        {/* Overlay sutil para melhor integração sobre a imagem */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/30" />
       </div>
 
       {/* Efeitos visuais futuristas */}
+      {/* Mantive o z-index dos efeitos em 20 para que fiquem acima da imagem */}
       <div className="absolute inset-0 z-20">
         {/* Partículas flutuantes */}
         <div className="floating-particles">
@@ -72,6 +72,7 @@ export default function Hero() {
       </div>
 
       {/* Conteúdo mínimo - apenas efeitos visuais */}
+      {/* Conteúdo principal deve ter o maior z-index para ser visível */}
       <div className="relative z-25 text-center max-w-4xl mx-auto px-4">
         {/* Elemento decorativo central */}
         <div className="hero-center-element">
