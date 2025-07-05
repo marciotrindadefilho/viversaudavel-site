@@ -6,7 +6,7 @@ import Ebooks from "@/components/ebooks"
 import Blog from "@/components/blog"
 import Testimonials from "@/components/testimonials"
 import Footer from "@/components/footer"
-import Audiobooks from "@/components/audiobooks"
+import Audiobooks from "./layout"
 
 export default function Home() {
   return (
