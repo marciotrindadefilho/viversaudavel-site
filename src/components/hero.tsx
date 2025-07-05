@@ -41,7 +41,7 @@ export default function Hero() {
             src="/dna.jpg"
             alt="DNA Background"
             fill
-            className="object-contain hero-image"
+            className="object-cover hero-image"
             priority
             style={{
               objectPosition: "center center",

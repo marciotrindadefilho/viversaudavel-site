@@ -10,22 +10,21 @@ export default function Blog() {
       title: "5 Exercícios Essenciais para Manter a Mobilidade após os 50",
       excerpt:
         "Descubra exercícios simples que podem ser feitos em casa para manter suas articulações saudáveis e flexíveis.",
-      image: "/nutri2.png",
+      image: "/nutri2.jpeg",
       date: "15 Jan 2025",
       category: "Exercícios",
     },
     {
       title: "Alimentação Anti-inflamatória: O que Incluir no seu Prato",
       excerpt: "Conheça os alimentos que ajudam a reduzir a inflamação no corpo e promovem o envelhecimento saudável.",
-      image: "/nutri.png",
+      image: "/nutri.jpeg",
       date: "12 Jan 2025",
       category: "Nutrição",
     },
     {
       title: "Técnicas de Respiração para Reduzir o Estresse",
-      excerpt:
-        "Aprenda técnicas simples de respiração que podem ajudar a controlar a ansiedade e melhorar seu bem-estar.",
-      image: "/nutri1.png",
+      excerpt:"Aprenda técnicas simples de respiração que podem ajudar a controlar a ansiedade e melhorar seu bem-estar.",
+      image: "/nutri1.jpeg",
       date: "10 Jan 2025",
       category: "Saúde Mental",
     },
