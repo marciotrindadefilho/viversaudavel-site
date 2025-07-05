@@ -6,31 +6,28 @@ export default function Testimonials() {
       name: "Maria Silva",
       age: "62 anos",
       text: "Os e-books da Viver Saudável mudaram minha perspectiva sobre envelhecimento. Agora me sinto mais confiante para cuidar da minha saúde.",
-      image: "/fisio8.png",
-      rating: 4.8,
+      image: "/placeholder.svg?height=80&width=80",
     },
     {
       name: "João Santos",
       age: "58 anos",
       text: "Como cuidador da minha mãe, encontrei informações valiosas que me ajudaram muito no dia a dia. Conteúdo de qualidade e fácil de entender.",
-      image: "/dna4.jpg",
-      rating: 4.8,
+      image: "/placeholder.svg?height=80&width=80",
     },
     {
       name: "Ana Costa",
       age: "65 anos",
       text: "Excelente material! A linguagem é clara e as dicas são práticas. Recomendo para todos que querem envelhecer com saúde e dignidade.",
-      image: "/nutri.jpeg",
-      rating: 4.8,
+      image: "/placeholder.svg?height=80&width=80",
     },
   ]
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Fundo gradiente que combina com a imagem DNA */}
+    <section className="relative py-20">
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/50 via-transparent to-slate-900/50"></div>
+        <Image src="/dna.jpg" alt="DNA Background" fill className="object-cover" />
+        <div className="absolute inset-0 bg-white/90" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4">

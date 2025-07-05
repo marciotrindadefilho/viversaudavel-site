@@ -10,14 +10,14 @@ export default function Blog() {
       title: "5 Exercícios Essenciais para Manter a Mobilidade após os 50",
       excerpt:
         "Descubra exercícios simples que podem ser feitos em casa para manter suas articulações saudáveis e flexíveis.",
-      image: "/nutri2.jpeg",
+      image: "/nutri2.png",
       date: "15 Jan 2025",
       category: "Exercícios",
     },
     {
       title: "Alimentação Anti-inflamatória: O que Incluir no seu Prato",
       excerpt: "Conheça os alimentos que ajudam a reduzir a inflamação no corpo e promovem o envelhecimento saudável.",
-      image: "/nutri.jpeg",
+      image: "/nutri.png",
       date: "12 Jan 2025",
       category: "Nutrição",
     },
@@ -25,7 +25,7 @@ export default function Blog() {
       title: "Técnicas de Respiração para Reduzir o Estresse",
       excerpt:
         "Aprenda técnicas simples de respiração que podem ajudar a controlar a ansiedade e melhorar seu bem-estar.",
-      image: "/nutri1.jpeg",
+      image: "/nutri1.png",
       date: "10 Jan 2025",
       category: "Saúde Mental",
     },
@@ -36,11 +36,9 @@ export default function Blog() {
   }
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Fundo gradiente que combina com a imagem DNA */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/50 via-transparent to-slate-900/50"></div>
+    <section className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Nosso Blog: Dicas para Viver Saudável</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Encontre artigos e insights para uma vida mais ativa, plena e feliz após os 50 anos
@@ -93,6 +91,7 @@ export default function Blog() {
             </Button>
           </Link>
         </div>
+      </div>
     </section>
   )
 }
