@@ -9,78 +9,25 @@ import { Button } from "@/components/ui/button"
     {
       name: "Ortopedia",
       description: "Lesões musculares, ligamentares, articulares, fraturas, pós-operatório",
-      image: "/audiobook.png",
+      image: "/orto.png",
       color: "bg-red-500",
       count: 18,
     },
     {
       name: "Neurologia",
       description: "AVC, Parkinson, esclerose múltipla, lesões medulares, paralisia cerebral",
-      image: "/audiobook.png",
+      image: "/neuro.png",
       color: "bg-blue-500",
       count: 14,
     },
     {
       name: "Respiratória",
       description: "DPOC, asma, fibrose cística, pós-operatório de cirurgias torácicas",
-      image: "/audiobook.png",
+      image: "/resp.png",
       color: "bg-green-500",
       count: 12,
     },
-    {
-      name: "Reabilitação Esportiva",
-      description: "Lesões esportivas, prevenção de lesões, retorno ao esporte",
-      image: "/audiobook.png",
-      color: "bg-orange-500",
-      count: 10,
-    },
-    {
-      name: "Cardiovascular",
-      description: "Reabilitação cardíaca, pós-infarto, insuficiência cardíaca",
-      image: "/audiobook.png",
-      color: "bg-purple-500",
-      count: 13,
-    },
-    {
-      name: "Geriatria",
-      description: "Reabilitação em idosos, sarcopenia, equilíbrio, quedas",
-      image: "/audiobook.png",
-      color: "bg-indigo-500",
-      count: 16,
-    },
-  ]
-
-  const featuredAudiobooks = [
-    {
-      title: "Fundamentos da Fisioterapia Ortopédica",
-      narrator: "Dra. Georgia Espinola Moura",
-      category: "Ortopedia",
-      duration: "4h 32min",
-      rating: 4.9,
-      listeners: 850,
-      image: "/fisio3.png",
-      premium: true,
-    },
-    {
-      title: "Neuroplasticidade e Reabilitação",
-      narrator: "Dra. Georgia Espinola Moura",
-      category: "Neurologia",
-      duration: "3h 45min",
-      rating: 4.8,
-      listeners: 620,
-      image: "/fisio2.png",
-      premium: true,
-    },
-    {
-      title: "Técnicas de Respiração Terapêutica",
-      narrator: "Dra. Georgia Espinola Moura",
-      category: "Respiratória",
-      duration: "2h 18min",
-      rating: 4.7,
-      listeners: 490,
-      image: "/fisio6.png",
-      premium: false,
-    },
+  
   ]
 
   return (
