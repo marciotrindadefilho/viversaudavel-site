@@ -31,10 +31,16 @@ export default function Blog() {
     },
   ]
 
+  function alert(arg0: string) {
+    throw new Error("Function not implemented.")
+  }
+
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Fundo gradiente que combina com a imagem DNA */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/50 via-transparent to-slate-900/50"></div>
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Nosso Blog: Dicas para Viver Saudável</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Encontre artigos e insights para uma vida mais ativa, plena e feliz após os 50 anos
@@ -87,7 +93,6 @@ export default function Blog() {
             </Button>
           </Link>
         </div>
-      </div>
     </section>
   )
 }

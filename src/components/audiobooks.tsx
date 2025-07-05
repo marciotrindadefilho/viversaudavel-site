@@ -30,12 +30,16 @@ import { Button } from "@/components/ui/button"
   
   ]
 
+   function alert(arg0: string) {
+     throw new Error("Function not implemented.")
+   }
+
   return (
-    <section className="relative py-20">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image src="/dna.jpg" alt="DNA Background" fill className="object-cover" />
-          <div className="absolute inset-0 bg-white/90" />
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Fundo gradiente que combina com a imagem DNA */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-blue-950/50 via-transparent to-slate-900/50"></div>
         </div>
 
       <div className="relative z-10 container mx-auto px-4">
