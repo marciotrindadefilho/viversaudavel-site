@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
- export default function AudiobooksPage() {
+ export default function Audiobooks() {
   const audiobooks = [
     {
       name: "Ortopedia",
@@ -137,7 +137,7 @@ import { Button } from "@/components/ui/button"
           ))}
         </div>
            <div className="text-center">
-                     <Link href="/ebooks">
+                     <Link href="/audiobooks">
                        <Button
                          size="lg"
                          variant="outline"
