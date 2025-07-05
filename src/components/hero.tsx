@@ -34,14 +34,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Background Image - Limitada em altura para não invadir próxima seção */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center">
+      {/* Imagem de fundo */}
+      <div className="absolute inset-0 z-0 object-cover">
         <div className="relative w-full max-w-5xl h-4/5">
           <Image
             src="/dna.jpg"
-            alt="DNA Background"
+            alt="imagem de fundo"
             fill
-            className="object-cover hero-image"
+            className="object-contain hero-image"
             priority
             style={{
               objectPosition: "center center",
