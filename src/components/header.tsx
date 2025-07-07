@@ -93,8 +93,8 @@ export default function Header() {
                 <Image
                   src="/logo.png"
                   alt="Viver Saudável"
-                  width={150}
-                  height={44}
+                  width={70}
+                  height={20}
                   className="h-14 w-auto hover:scale-105 transition-transform duration-300 logo-transparent"
                 />
               </div>
