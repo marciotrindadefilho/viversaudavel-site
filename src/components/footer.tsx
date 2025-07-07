@@ -10,7 +10,8 @@ export default function Footer() {
           {/* Logo e WhatsApp */}
           <div className="space-y-4">
             <div className="footer-logo-container">
-              <Image src="/img2.png" alt="Viver Saudável" width={100} height={32} className="footer-logo" />
+              <Image src="/img2.png" alt="Viver Saudável" 
+               className="footer-logo" />
             </div>
             {/* Logo e WhatsApp */}
             <p className="text-sm text-gray-400">'WatSapp'</p>
