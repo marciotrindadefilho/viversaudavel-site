@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 export default function Values() {
   const values = [
     {
@@ -25,17 +23,11 @@ export default function Values() {
   ]
 
   return (
-    <section className="relative py-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image src="/dna.jpg" alt="DNA Background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-white/85" />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4">
+    <section className="relative py-20 bg-white"> {/* Fundo branco */}
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Nossos Valores</h2>
-          <h3 className="text-2xl font-semibold text-green-600 mb-8">Nossa Expertise</h3>
+          <h3 className="text-2xl font-semibold text-[#d4af37] mb-8">Nossa Expertise</h3>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Com formação em Fisioterapia, especialista Fisioterapia Cardiorrespiratória pelo Instituto do Coração-
             INCOR/HCFMUSP, anos de experiência na área hospitalar, reabilitação motora, neurológica, pós-operatório em
@@ -48,9 +40,9 @@ export default function Values() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              <div className="w-12 h-12 bg-[#d4af37] text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
                 {value.number}
               </div>
               <h4 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h4>
