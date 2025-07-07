@@ -91,10 +91,10 @@ export default function Header() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <div className="relative z-10 logo-container">
                 <Image
-                  src="/logo-novo.png"
+                  src="/logo.png"
                   alt="Viver Saudável"
-                  width={220}
-                  height={70}
+                  width={150}
+                  height={44}
                   className="h-14 w-auto hover:scale-105 transition-transform duration-300 logo-transparent"
                 />
               </div>
