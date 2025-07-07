@@ -12,13 +12,13 @@ export default function Testimonials() {
       name: "João Santos",
       age: "58 anos",
       text: "Como cuidador da minha mãe, encontrei informações valiosas que me ajudaram muito no dia a dia. Conteúdo de qualidade e fácil de entender.",
-      image: "/ort.png",
+      image: "/resp.png",
     },
     {
       name: "Ana Costa",
       age: "65 anos",
       text: "Excelente material! A linguagem é clara e as dicas são práticas. Recomendo para todos que querem envelhecer com saúde e dignidade.",
-      image: "/nutri.png",
+      image: "/nutri.jpeg",
     },
   ]
 
