@@ -12,7 +12,8 @@ export default function Footer() {
             <div className="footer-logo-container">
               <Image src="/img2.png" alt="Viver Saudável" width={100} height={32} className="footer-logo" />
             </div>
-            <p className="text-sm text-gray-400">E-BOOKS</p>
+            {/* Logo e WhatsApp */}
+            <p className="text-sm text-gray-400">'WatSapp'</p>
           </div>
 
           {/* Links Rápidos */}
@@ -27,6 +28,11 @@ export default function Footer() {
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
                   Nossos Ebooks
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                 Nossos Audibooks
                 </a>
               </li>
               <li>
@@ -48,7 +54,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Exercícios
+                  Cardiorrespiratória
                 </a>
               </li>
               <li>
@@ -96,7 +102,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2025 Viver Saudável. Todos os direitos reservados. Fundada por Georgia Espínola Moura.
+            © 2025 Viver Saudável. Todos os direitos reservados. Fundada por Dra. Georgia Espínola Moura.
           </p>
           <p className="text-gray-500 text-xs mt-2">
             <a href="#" className="hover:text-white transition-colors">
