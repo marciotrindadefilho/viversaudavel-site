@@ -23,7 +23,7 @@ export default function Values() {
   ]
 
   return (
-    <section className="relative py-20 bg-white"> {/* Fundo branco */}
+    <section className="relative py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Nossos Valores</h2>
@@ -40,13 +40,13 @@ export default function Values() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-[#d4af37] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-white"
             >
-              <div className="w-12 h-12 bg-[#d4af37] text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              <div className="w-12 h-12 bg-white text-[#d4af37] rounded-full flex items-center justify-center text-xl font-bold mb-4">
                 {value.number}
               </div>
-              <h4 className="text-xl font-semibold text-gray-800 mb-3">{value.title}</h4>
-              <p className="text-gray-600 leading-relaxed">{value.description}</p>
+              <h4 className="text-xl font-semibold mb-3">{value.title}</h4>
+              <p className="leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>
