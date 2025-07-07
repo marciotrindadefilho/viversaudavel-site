@@ -7,22 +7,25 @@ import { Button } from "@/components/ui/button"
  export default function Audiobooks() {
   const audiobooks = [
     {
-      name: "Ortopedia",
+      
       description: "Lesões musculares, ligamentares, articulares, fraturas, pós-operatório",
+      name: "Ortopedia",
       image: "/orto.png",
       color: "bg-red-500",
       count: 18,
     },
     {
-      name: "Neurologia",
+      
       description: "AVC, Parkinson, esclerose múltipla, lesões medulares, paralisia cerebral",
+      name: "Neurologia",
       image: "/neuro.png",
       color: "bg-blue-500",
       count: 14,
     },
     {
-      name: "Respiratória",
+      
       description: "DPOC, asma, fibrose cística, pós-operatório de cirurgias torácicas",
+      name: "Respiratória",
       image: "/resp.png",
       color: "bg-green-500",
       count: 12,

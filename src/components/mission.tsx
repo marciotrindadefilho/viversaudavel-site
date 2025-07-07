@@ -1,30 +1,10 @@
-
 import Image from "next/image"
 
 export default function Mission() {
   return (
-    <section className="relative py-20">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image src="/dna.jpg" alt="DNA Background" fill className="object-cover" />
-        <div className="absolute inset-0 bg-white/90" />
-      </div>
-
+    <section className="relative py-20 bg-white"> {/* Agora com fundo branco direto */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Founder Image */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <Image
-                src="/geo.png"
-                alt="Georgia Espinola Moura - Fundadora"
-                width={400}
-                height={500}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-
           {/* Content */}
           <div className="space-y-6">
             <div>
@@ -46,6 +26,19 @@ export default function Mission() {
                 bem-estar. Desde 2011, Georgia atua em João Pessoa – PB, em âmbito hospitalar e também com foco em
                 fisioterapia domiciliar e reabilitação integrativa, especialmente voltada à população adulta e idosa.
               </p>
+            </div>
+          </div>
+
+          {/* Founder Image */}
+          <div className="flex justify-center">
+            <div className="relative">
+              <Image
+                src="/geo.png"
+                alt="Georgia Espinola Moura - Fundadora"
+                width={400}
+                height={500}
+                className="rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
