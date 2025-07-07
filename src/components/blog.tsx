@@ -30,10 +30,6 @@ export default function Blog() {
     },
   ]
 
-  function alert(arg0: string) {
-    throw new Error("Function not implemented.")
-  }
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -48,7 +44,7 @@ export default function Blog() {
           {blogPosts.map((post, index) => (
             <article
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
             >
               <div className="relative h-48">
                 <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
@@ -56,27 +52,21 @@ export default function Blog() {
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm">{post.category}</span>
                 </div>
               </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-500 mb-2">{post.date}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">{post.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
-                <div className="flex space-x-2 mt-3">
-                  <Link href={`/blog/${post.title.toLowerCase().replace(/\s+/g, "-")}`} className="flex-1">
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <div className="text-sm text-gray-500 mb-2">{post.date}</div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">{post.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                </div>
+                <div className="flex justify-center">
+                  <Link href={`/blog/${post.title.toLowerCase().replace(/\s+/g, "-")}`}>
                     <Button
                       variant="outline"
-                      className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+                      className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
                     >
                       Leia Mais
                     </Button>
                   </Link>
-                  <Button
-                    className="bg-green-600 hover:bg-green-700 px-6"
-                    onClick={() => {
-                      alert(`E-book sobre ${post.category} adicionado ao carrinho!`)
-                    }}
-                  >
-                    R$ 34,90
-                  </Button>
                 </div>
               </div>
             </article>

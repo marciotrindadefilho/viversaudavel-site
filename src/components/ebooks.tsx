@@ -23,10 +23,6 @@ export default function Ebooks() {
     },
   ]
 
-  function alert(arg0: string) {
-    throw new Error("Function not implemented.")
-  }
-
   return (
     <section className="relative py-20">
       {/* Background Image */}
@@ -48,32 +44,25 @@ export default function Ebooks() {
           {ebooks.map((ebook, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col"
             >
               <div className="relative h-64">
                 <Image src={ebook.image || "/placeholder.svg"} alt={ebook.title} fill className="object-cover" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">{ebook.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{ebook.description}</p>
-                <div className="flex space-x-2">
-                  <Link href={`/ebooks/${ebook.title.toLowerCase().replace(/\s+/g, "-")}`} className="flex-1">
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">{ebook.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{ebook.description}</p>
+                </div>
+                <div className="flex justify-center">
+                  <Link href={`/ebooks/${ebook.title.toLowerCase().replace(/\s+/g, "-")}`}>
                     <Button
                       variant="outline"
-                      className="w-full border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+                      className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
                     >
                       Ver Detalhes
                     </Button>
                   </Link>
-                  <Button
-                    className="bg-green-600 hover:bg-green-700 px-6"
-                    onClick={() => {
-                      // Add to cart logic here
-                      alert(`${ebook.title} adicionado ao carrinho!`)
-                    }}
-                  >
-                    R$ 49,90
-                  </Button>
                 </div>
               </div>
             </div>
