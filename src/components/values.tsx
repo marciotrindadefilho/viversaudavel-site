@@ -27,7 +27,7 @@ export default function Values() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Nossos Valores</h2>
-          <h3 className="text-2xl font-semibold text-[#d4af37] mb-8">Nossa Expertise</h3>
+          <h3 className="text-2xl font-semibold text-green-600 mb-8">Nossa Expertise</h3>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Com formação em Fisioterapia, especialista Fisioterapia Cardiorrespiratória pelo Instituto do Coração-
             INCOR/HCFMUSP, anos de experiência na área hospitalar, reabilitação motora, neurológica, pós-operatório em
@@ -40,9 +40,9 @@ export default function Values() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-[#d4af37] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-white"
+              className="bg-[#cce4f6] p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow text-black"
             >
-              <div className="w-12 h-12 bg-white text-[#d4af37] rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
                 {value.number}
               </div>
               <h4 className="text-xl font-semibold mb-3">{value.title}</h4>
