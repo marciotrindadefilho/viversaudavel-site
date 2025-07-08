@@ -37,7 +37,7 @@ export default function Mission() {
                 alt="Georgia Espinola Moura - Fundadora"
                 width={400}
                 height={500}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg Image-transparent"
               />
             </div>
           </div>
