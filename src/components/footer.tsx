@@ -10,10 +10,14 @@ export default function Footer() {
           {/* Logo e WhatsApp */}
           <div className="space-y-4">
             <div className="footer-logo-container">
-              <Image src="/img2.png" alt="Viver Saudável" 
-               className="footer-logo" />
+              {/* AJUSTE: Adicionado 'width' e 'height' para exibir a imagem corretamente */}
+              <Image 
+                src="/img2.png" 
+                alt="Viver Saudável" 
+                width={160} 
+                height={36} 
+              />
             </div>
-            {/* Logo e WhatsApp */}
             <p className="text-sm text-gray-400">'WatSapp'</p>
           </div>
 
@@ -33,7 +37,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                 Nossos Audibooks
+                  Nossos Audibooks
                 </a>
               </li>
               <li>
@@ -107,7 +111,7 @@ export default function Footer() {
           </p>
           <p className="text-gray-500 text-xs mt-2">
             <a href="#" className="hover:text-white transition-colors">
-                    Termos de uso e Politica de Privacisade
+              Termos de uso e Politica de Privacisade
             </a>
           </p>
         </div>
