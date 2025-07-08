@@ -145,13 +145,14 @@ export default function Header() {
             </div>
 
             {/* Navegação de usuário */}
-            <nav className="flex items-center space-x-4">
-              <Link href="/#contato" className="futuristic-nav-link">
-                Contato
-              </Link>
-              <Link href="/carrinho" className="futuristic-nav-link">
-                <ShoppingCart className="w-5 h-5" />
-              </Link>
+          <nav className="flex items-center space-x-4">
+            {/* AJUSTE: Corrigido o href para apontar para a âncora #contato */}
+            <Link href="#contato" className="futuristic-nav-link">
+              Contato
+            </Link>
+            <Link href="/carrinho" className="futuristic-nav-link">
+              <ShoppingCart className="w-5 h-5" />
+            </Link>
 
               {user ? (
                 <div className="flex items-center space-x-3">

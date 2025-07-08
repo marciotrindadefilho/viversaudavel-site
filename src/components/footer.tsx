@@ -1,11 +1,15 @@
+// Arquivo: footer.tsx
+
 import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
+    // AJUSTE: Adicionada a id="contato" como âncora e scroll-mt-24 de margem para o scroll
+    <footer id="contato" className="bg-black text-white py-12 scroll-mt-24">
       <div className="container mx-auto px-4">
+        {/* ... todo o resto do seu conteúdo do footer permanece igual ... */}
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo e WhatsApp */}
           <div className="space-y-4">
@@ -13,39 +17,22 @@ export default function Footer() {
               <Image 
                 src="/img2.png" 
                 alt="Viver Saudável" 
-                className="text-sm text-gray-400"></Image>
+                width={160} 
+                height={36} 
+              />
             </div>
+            <p className="text-sm text-gray-400">'WatSapp'</p>
           </div>
 
           {/* Links Rápidos */}
           <div>
             <h3 className="text-green-400 font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Nossos Ebooks
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Nossos Audibooks
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Depoimentos
-                </a>
-              </li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Nossos Ebooks</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Nossos Audibooks</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
             </ul>
           </div>
 
@@ -53,26 +40,10 @@ export default function Footer() {
           <div>
             <h3 className="text-green-400 font-semibold mb-4">Categorias</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Cardiorrespiratória
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Nutrição
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Saúde Mental
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                  Prevenção
-                </a>
-              </li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Cardiorrespiratória</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Nutrição</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Saúde Mental</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Prevenção</a></li>
             </ul>
           </div>
 
@@ -84,16 +55,11 @@ export default function Footer() {
               <p>📞 (83) 9 9910-5011</p>
               <p>✉️ contato@viversaudavel.com</p>
             </div>
-
             <div className="space-y-3">
               <h4 className="text-green-400 font-medium">Newsletter</h4>
               <p className="text-xs text-gray-400">Receba dicas de saúde semanalmente</p>
               <div className="flex space-x-2">
-                <Input
-                  type="email"
-                  placeholder="Seu e-mail"
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-500 text-sm"
-                />
+                <Input type="email" placeholder="Seu e-mail" className="bg-gray-800 border-gray-700 text-white placeholder-gray-500 text-sm" />
                 <Button className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 text-sm">OK</Button>
               </div>
             </div>
