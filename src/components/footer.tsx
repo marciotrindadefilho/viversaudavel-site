@@ -1,25 +1,31 @@
 // Arquivo: footer.tsx
 
 import Image from "next/image"
+import Link from "next/link" // AJUSTE: Importado o componente Link
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    // AJUSTE: Adicionada a id="contato" como âncora e scroll-mt-24 de margem para o scroll
     <footer id="contato" className="bg-black text-white py-12 scroll-mt-24">
       <div className="container mx-auto px-4">
-        {/* ... todo o resto do seu conteúdo do footer permanece igual ... */}
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo e WhatsApp */}
           <div className="space-y-4">
             <div className="footer-logo-container">
-              <Image 
-                src="/img2.png" 
-                alt="Viver Saudável" 
-                width={160} 
-                height={36} 
-              />
+              {/*
+                AJUSTE: A imagem agora é um link para o topo da página.
+                Adicionei um efeito de hover para mostrar que é clicável.
+              */}
+              <Link href="#" aria-label="Voltar ao topo">
+                <Image 
+                  src="/img2.png" 
+                  alt="Viver Saudável - Voltar ao topo" 
+                  width={160} 
+                  height={36}
+                  className="cursor-pointer transition-opacity hover:opacity-80"
+                />
+              </Link>
             </div>
             <p className="text-sm text-gray-400">'WatSapp'</p>
           </div>
