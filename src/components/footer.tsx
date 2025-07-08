@@ -10,15 +10,11 @@ export default function Footer() {
           {/* Logo e WhatsApp */}
           <div className="space-y-4">
             <div className="footer-logo-container">
-              {/* AJUSTE: Adicionado 'width' e 'height' para exibir a imagem corretamente */}
               <Image 
                 src="/img2.png" 
                 alt="Viver Saudável" 
-                width={160} 
-                height={36} 
-              />
+                className="text-sm text-gray-400"></Image>
             </div>
-            <p className="text-sm text-gray-400">'WatSapp'</p>
           </div>
 
           {/* Links Rápidos */}

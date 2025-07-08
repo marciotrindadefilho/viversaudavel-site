@@ -92,12 +92,9 @@ export default function Header() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <div className="relative z-10 logo-container">
                 <Image
-                  src="/logo.png" // O código já está apontando para o nome de arquivo correto
+                  src="/logo.png" 
                   alt="Viver Saudável"
-                  width={180} // Adicionado width para melhor performance e evitar layout shift
-                  height={40}  // Adicionado height para melhor performance e evitar layout shift
-                  // AJUSTE: Reduzida a altura de 'h-14' para 'h-10' para um logo mais compacto
-                  className="h-10 w-auto hover:scale-105 transition-transform duration-300 logo-transparent"
+                  className="h-14 px-4 py-2 bg-white shadow-md"
                 />
               </div>
             </div>
