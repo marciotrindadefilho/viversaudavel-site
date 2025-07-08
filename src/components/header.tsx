@@ -79,7 +79,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="futuristic-header relative z-50">
+   <header className="futuristic-header relative z-50">
       {/* Efeito de brilho futurista */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-purple-500/10 backdrop-blur-sm"></div>
 
@@ -92,9 +92,9 @@ export default function Header() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
               <div className="relative z-10 logo-container">
                 <Image
-                  src="/logo.png" 
+                  src="/logo.png"
                   alt="Viver Saudável"
-                  className="h-14 px-4 py-2 bg-white shadow-md"
+                  className="h-10 px-4 py-2 logo-transparent"
                 />
               </div>
             </div>
