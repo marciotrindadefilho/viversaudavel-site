@@ -33,7 +33,7 @@ export default function Mission() {
           <div className="flex justify-center">
             <div className="relative">
               <Image
-                src="/geo.png"
+                src="/geo2.png"
                 alt="Georgia Espinola Moura - Fundadora"
                 width={400}
                 height={500}
