@@ -60,7 +60,7 @@ export default function Audiobooks() {
                   <p className="text-gray-600 mb-6 leading-relaxed">{audiobook.description}</p>
                 </div>
                 <div className="flex justify-center">
-                  <Link href={`/audiobooks/${audiobook.image.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <Link href={`/audiobooks/biblioteca ${audiobook.image.toLowerCase().replace(/\s+/g, "-")}`}>
                     <Button
                       variant="outline"
                       className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"

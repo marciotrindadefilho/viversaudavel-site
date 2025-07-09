@@ -55,7 +55,7 @@ export default function Ebooks() {
                   <p className="text-gray-600 mb-6 leading-relaxed">{ebook.description}</p>
                 </div>
                 <div className="flex justify-center">
-                  <Link href={`/ebooks/${ebook.title.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <Link href={`/ebooks/biblioteca ${ebook.title.toLowerCase().replace(/\s+/g, "-")}`}>
                     <Button
                       variant="outline"
                       className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"

@@ -59,7 +59,7 @@ export default function Blog() {
                   <p className="text-gray-600 mb-6 leading-relaxed line-clamp-3">{post.excerpt}</p>
                 </div>
                 <div className="flex justify-center">
-                  <Link href={`/blog/${post.title.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <Link href={`/mais/blog ${post.title.toLowerCase().replace(/\s+/g, "-")}`}>
                     <Button
                       variant="outline"
                       className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
