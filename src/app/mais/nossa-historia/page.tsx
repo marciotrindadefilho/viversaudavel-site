@@ -128,13 +128,13 @@ export default function NossaHistoria() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* AJUSTE: Botão agora é um link funcional */}
-            <Link href="/e-books">
+            <Link href="/e-books/biblioteca">
               <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                 Explorar E-books
               </Button>
             </Link>
             {/* AJUSTE: Botão agora é um link funcional */}
-            <Link href="/audiobooks">
+            <Link href="/audiobooks/biblioteca">
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600 bg-transparent w-full sm:w-auto">
                 Conhecer Audiobooks
               </Button>
