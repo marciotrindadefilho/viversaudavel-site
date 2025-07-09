@@ -21,11 +21,11 @@ export default function NossaHistoria() {
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
                 Com formação em Fisioterapia, especialista Fisioterapia Cardiorrespiratória pelo Instituto do Coração- INCOR/HCFMUSP,
                 anos de experiência na área hospitalar, reabilitação motora, neurológica, pós-operatório em geral, cardiopulmonar, 
-                como também em geriatria, oferecemos conteúdo confiável e prático baseado em ciência para uma vida mais saudável e ativa.
+                como também em geriatria, oferecemos conteúdo confiável e prático baseado em ciência para uma vida mais ativa e saudável.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                A Viver Saudável tem como principal missão desenvolver produtos como e-books e audiobooks,
-                baseados em estudos e conhecimentos teórico-práticos, sempre fundamentados em evidências científicas.
+                A Viver Saudável tem como principal missão desenvolver conteúdos, baseados em estudos 
+                e conhecimentos teórico-práticos, sempre fundamentados em evidências científicas.
               </p>
             </div>
 
@@ -93,18 +93,16 @@ export default function NossaHistoria() {
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Nossa História</h2>
             <div className="prose prose-lg mx-auto text-gray-600">
               <p className="text-lg leading-relaxed mb-6">
-                O <strong>Viver Saudável</strong> nasceu da necessidade de tornar o conhecimento especializado em
-                fisioterapia cardiorrespiratória mais acessível. Percebemos que muitos profissionais e estudantes
-                enfrentavam dificuldades para encontrar material de qualidade e atualizado na área.
+    A <strong>Viver Saudável</strong> nasceu da necessidade de tornar o conhecimento especializado em fisioterapia cardiorrespiratória mais acessível.
+    Percebemos que muitos profissionais e estudantes enfrentavam dificuldades para encontrar material de qualidade e atualizado na área.
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                Nossa plataforma foi criada para preencher essa lacuna, oferecendo e-books e audiobooks desenvolvidos
-                por especialistas, com linguagem clara e aplicação prática no dia a dia clínico.
+    Nossa plataforma foi criada para preencher essa lacuna, oferecendo e-books e audiobooks desenvolvidos por especialistas, com linguagem clara 
+    e aplicação prática no dia a dia clínico.
               </p>
               <p className="text-lg leading-relaxed">
-                Acreditamos que o conhecimento deve ser acessível a todos. Por isso, nos dedicamos a oferecer 
-                conteúdos de alta qualidade por preços justos, contribuindo para a formação de profissionais 
-                mais preparados e, assim, promovendo melhores resultados na saúde dos pacientes
+    Acreditamos que o conhecimento deve ser acessível a todos. Por isso, nos dedicamos a oferecer conteúdos de alta qualidade por preços justos, 
+    contribuindo para a formação de profissionais mais preparados e, assim, promovendo melhores resultados na saúde dos pacientes.
               </p>
             </div>
           </div>
