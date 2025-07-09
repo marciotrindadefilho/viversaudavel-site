@@ -135,11 +135,7 @@ export default function NossaHistoria() {
             </Link>
             {/* AJUSTE: Botão agora é um link funcional */}
             <Link href="/audiobooks">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-blue-600 bg-transparent w-full sm:w-auto"
-              >
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-blue-600 bg-transparent w-full sm:w-auto">
                 Conhecer Audiobooks
               </Button>
             </Link>
