@@ -17,7 +17,7 @@ export default function NossaHistoria() {
           {/* AJUSTE: 'items-center' para alinhar verticalmente o conteúdo */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Texto */}
-            {/* AJUSTE: Adicionado um padding-top para descer o texto e alinhar com o rosto */}
+            {/* AJUSTE: Adicionado um padding-top para subir o texto e alinhar com o rosto */}
             <div className="lg:pt-8">
               <h1 className="text-5xl font-bold text-gray-900 mb-6">Nossa Expertise</h1>
               {/* AJUSTE: Adicionado 'text-justify' para um texto mais limpo */}
