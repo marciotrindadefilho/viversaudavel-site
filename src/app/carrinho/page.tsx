@@ -65,12 +65,11 @@ export default function CartPage() {
 
   const applyCoupon = () => {
     if (couponCode.toLowerCase() === "viver10") {
-      setAppliedCoupon({ code: "VIVER10", discount: 10 })
+      setAppliedCoupon({code: "VIVER10", discount: 10 })
     } else if (couponCode.toLowerCase() === "primeira20") {
-      setAppliedCoupon({ code: "PRIMEIRA20", discount: 20 })
-    } else {
-      alert("Cupom inválido")
-    }
+      setAppliedCoupon({code: "PRIMEIRA20", discount: 20 })
+    } else {alert("Cupom inválido")}
+    
   }
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)

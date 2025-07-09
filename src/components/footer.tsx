@@ -17,10 +17,10 @@ export default function Footer() {
                 AJUSTE: A imagem agora é um link para o topo da página.
                 Adicionei um efeito de hover para mostrar que é clicável.
               */}
-              <Link href="#" aria-label="Voltar ao topo">
+              <Link href="#" aria-label="Voltar pagina inicial">
                 <Image 
                   src="/img2.png" 
-                  alt="Viver Saudável - Voltar ao topo" 
+                  alt="Viver Saudável - Voltar pagina inicial" 
                   width={160} 
                   height={36}
                   className="cursor-pointer transition-opacity hover:opacity-80"
@@ -34,11 +34,11 @@ export default function Footer() {
           <div>
             <h3 className="text-green-400 font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Nossos Ebooks</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Nossos Audibooks</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
+              <li><a href="mais/nossa-historia" className="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
+              <li><a href="e-books/biblioteca" className="text-gray-300 hover:text-white transition-colors">Nossos Ebooks</a></li>
+              <li><a href="audiobooks/biblioteca" className="text-gray-300 hover:text-white transition-colors">Nossos Audibooks</a></li>
+              <li><a href="mais/blog" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="mais/depoimentos" className="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
             </ul>
           </div>
 
