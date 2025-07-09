@@ -75,7 +75,7 @@ export default function Audiobooks() {
         </div>
 
         <div className="text-center">
-          <Link href="/audiobooks">
+          <Link href="/audiobooks/biblioteca">
             <Button
               size="lg"
               variant="outline"

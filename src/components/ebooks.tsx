@@ -70,7 +70,7 @@ export default function Ebooks() {
         </div>
 
         <div className="text-center">
-          <Link href="/ebooks">
+          <Link href="/ebooks/biblioteca">
             <Button
               size="lg"
               variant="outline"

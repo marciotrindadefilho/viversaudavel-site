@@ -74,7 +74,7 @@ export default function Blog() {
         </div>
 
         <div className="text-center">
-          <Link href="/blog">
+          <Link href="/mais/blog">
             <Button size="lg" className="bg-green-600 hover:bg-green-700">
               Ver Todos os Artigos
             </Button>

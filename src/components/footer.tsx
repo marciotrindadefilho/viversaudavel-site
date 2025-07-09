@@ -46,10 +46,10 @@ export default function Footer() {
           <div>
             <h3 className="text-green-400 font-semibold mb-4">Categorias</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Cardiorrespiratória</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Nutrição</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Saúde Mental</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Prevenção</a></li>
+              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Cardiorrespiratória</a></li>
+              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Nutrição</a></li>
+              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Saúde Mental</a></li>
+              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Prevenção</a></li>
             </ul>
           </div>
 
