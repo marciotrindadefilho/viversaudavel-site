@@ -113,11 +113,18 @@ export default function CartPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-grow relative bg-gray-100">
-        <div className="absolute inset-0 z-0">
-          <Image src="/img-carrinho.png" alt="Plano de Fundo" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
+      {/* AJUSTE: A imagem de fundo agora é aplicada via CSS na tag <main> para maior robustez. */}
+      <main 
+        className="flex-grow relative"
+        style={{
+          backgroundImage: `url(/img-carrinho.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Sobreposição escura para dar contraste ao texto */}
+        <div className="absolute inset-0 bg-black/60 z-0" />
 
         {notification && (
           <div 
@@ -130,11 +137,12 @@ export default function CartPage() {
           </div>
         )}
 
+        {/* AJUSTE: Todo o conteúdo da página agora fica dentro de um container com z-index para ficar à frente do fundo */}
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex justify-between items-center mb-12">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold text-white">Seu Carrinho</h1>
-              <p className="text-lg text-gray-300 mt-2">Revise seus itens antes de finalizar a compra.</p>
+              <p className="text-lg text-gray-300 mt-2">Revise os seus itens antes de finalizar a compra.</p>
             </div>
             <Card className="hidden md:block bg-white/90 backdrop-blur-sm">
               <CardContent className="p-4 flex items-center gap-4">
@@ -152,12 +160,12 @@ export default function CartPage() {
           {cartItems.length === 0 ? (
             <div className="text-center py-24 bg-white/90 backdrop-blur-sm rounded-lg">
               <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-6" />
-              <h2 className="text-2xl font-semibold text-gray-700 mb-4">Seu carrinho está vazio</h2>
-              <p className="text-gray-500 mb-8">Parece que você ainda não adicionou nenhum produto. Que tal começar agora?</p>
+              <h2 className="text-2xl font-semibold text-gray-700 mb-4">O seu carrinho está vazio</h2>
+              <p className="text-gray-500 mb-8">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
               <Link href="/">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700">
                   <ArrowLeft className="w-5 h-5 mr-2" />
-                  Continuar Comprando
+                  Continuar a Comprar
                 </Button>
               </Link>
             </div>
@@ -230,8 +238,7 @@ export default function CartPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex space-x-2">
-                      {/* AJUSTE: Removida a tipagem explícita para deixar o TypeScript inferir o tipo do evento, o que é mais seguro. */}
-                      <Input placeholder="Digite seu cupom" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
+                      <Input placeholder="Digite o seu cupom" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
                       <Button onClick={applyCoupon} variant="outline">Aplicar</Button>
                     </div>
                     {appliedCoupon && <p className="text-green-600 text-sm mt-2">Cupom {appliedCoupon.code} aplicado!</p>}
