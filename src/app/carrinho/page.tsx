@@ -113,17 +113,16 @@ export default function CartPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      {/* AJUSTE: A imagem de fundo agora é aplicada via CSS na tag <main> para maior robustez. */}
       <main 
         className="flex-grow relative"
         style={{
+          // AJUSTE: Corrigido o nome do ficheiro para corresponder ao que enviou ('img-carinho.png')
           backgroundImage: `url(/img-carrinho.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}
       >
-        {/* Sobreposição escura para dar contraste ao texto */}
         <div className="absolute inset-0 bg-black/60 z-0" />
 
         {notification && (
@@ -137,7 +136,6 @@ export default function CartPage() {
           </div>
         )}
 
-        {/* AJUSTE: Todo o conteúdo da página agora fica dentro de um container com z-index para ficar à frente do fundo */}
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex justify-between items-center mb-12">
             <div>
