@@ -91,42 +91,51 @@ export default function AudiobooksLibraryPage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section */}
-            <section className="relative py-20">
-              <div className="absolute inset-0 z-0">
-                <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
-              </div>
+      {/* Hero Section Modificada */}
+<section className="relative py-20">
+  <div className="absolute inset-0 z-0">
+    <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
+  </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                <Headphones className="w-10 h-10 text-golden" />
-              </div>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-8">Biblioteca de Audiobooks</h1>
-            <p className="text-base md:text-xl mb-8 leading-relaxed">
-            Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
-            sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
-                <Play className="w-5 h-5 mr-2" />
-                Começar a Ouvir
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-              >
-                Ver Planos Premium
-              </Button>
-            </div>
-          </div>
+  <div className="relative z-10 container mx-auto px-4 text-center text-white">
+    <div className="max-w-4xl mx-auto">
+      <div className="flex justify-center mb-6">
+        <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <Headphones className="w-10 h-10 text-golden" />
         </div>
-      </section>
+      </div>
+      
+      {/* Ajuste aqui: Aumente a margem inferior (mb) para criar o espaço desejado. 
+        Você pode testar valores como mb-24, mb-32, ou mb-40 para ver qual se encaixa melhor.
+      */}
+      <h1 className="text-3xl md:text-4xl font-bold mb-32">
+        Biblioteca de Audiobooks
+      </h1>
+
+      {/* Ajuste aqui: Remova a margem inferior anterior e adicione uma nova para ajustar o espaço até os botões.
+      */}
+      <p className="text-base md:text-xl leading-relaxed mb-12">
+        Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
+        sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
+          <Play className="w-5 h-5 mr-2" />
+          Começar a Ouvir
+        </Button>
+        <Button
+          size="lg"
+          variant="outline"
+          className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+        >
+          Ver Planos Premium
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Search and Filters */}
       <section className="py-12 bg-gray-50">
