@@ -39,28 +39,28 @@ export default function AudiobooksLibraryPage() {
       <Header />
 
       {/* ===== 1. HERO SECTION ===== */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-20">
         <div className="absolute inset-0 z-0">
           <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
         </div>
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <div className="mb-6">
-              <div className="w-24 h-24 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-golden-500/50">
+              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-black-500/50">
                 <Image src="/headphone.png" alt="Ícone de fones de ouvido" width={70} height={70} />
               </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-golden-400" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
+            <h1 className="text-3xl md:text-4xl font-bold mb-32">
               Biblioteca de Audiobooks
             </h1>
-            <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-300">
+            <p className="text-base md:text-xl leading-relaxed mb-12">
               Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#podcasts">
-                <Button size="lg" className="bg-golden-500 text-black hover:bg-golden-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  <Play className="w-5 h-5 mr-2" />
+                <Button size="lg" className="bg-gradient-to-br from-golden-500 via-golden-400 to-golden-500 text-white hover:bg-golden-600 transition-all duration-300 transform hover:shadow-golden-glow-hover shadow-golden-glow">
+                  <Play className="py-3 px-6 rounded-lg" />
                   Começar a Ouvir
                 </Button>
               </a>
