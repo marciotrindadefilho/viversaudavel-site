@@ -110,12 +110,12 @@ export default function CartPage() {
   const total = subtotal - couponDiscount;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-black">
       <Header />
       <main className="flex-grow relative">
-        <div className="absolute inset-0 z-0">
-          <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-          <div className="absolute inset-0 bg-white/60" />
+        <div className="absolute inset-0 z-0 opacity-40"> {/* Opacidade ajustada para melhor leitura */}
+          {/* ✅ SUA IMAGEM DE FUNDO SEM FILTRO */}
+          <Image src="/img-carrinho.png" alt="Viver Saudável Fundo" fill className="object-cover" />
         </div>
         
         {notification && (
@@ -132,8 +132,9 @@ export default function CartPage() {
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-800">Seu Carrinho</h1>
-              <p className="text-lg text-gray-600 mt-2">Revise os seus itens antes de finalizar a compra.</p>
+              {/* ✅ TEXTO COM DESTAQUE BRANCO */}
+              <h1 className="text-4xl md:text-5xl font-bold text-white">Seu Carrinho</h1>
+              <p className="text-lg text-gray-200 mt-2">Revise os seus itens antes de finalizar a compra.</p>
             </div>
             <Card className="hidden md:block bg-white/90 backdrop-blur-sm">
               <CardContent className="p-4 flex items-center gap-4">
@@ -149,10 +150,10 @@ export default function CartPage() {
           </div>
 
           {cartItems.length === 0 ? (
-            <div className="text-center py-24 bg-white/90 backdrop-blur-sm rounded-lg">
-              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-6" />
-              <h2 className="text-2xl font-semibold text-gray-700 mb-4">O seu carrinho está vazio</h2>
-              <p className="text-gray-500 mb-8">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
+            <div className="text-center py-24 bg-black/50 backdrop-blur-sm rounded-lg">
+              <ShoppingBag className="w-24 h-24 text-gray-300 mx-auto mb-6" />
+              <h2 className="text-2xl font-semibold text-gray-100 mb-4">O seu carrinho está vazio</h2>
+              <p className="text-gray-300 mb-8">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
               <Link href="/">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700">
                   <ArrowLeft className="w-5 h-5 mr-2" />
@@ -240,6 +241,11 @@ export default function CartPage() {
           )}
         </div>
       </main>
+      {/* ✅ DIVISÃO PARA O FOOTER:
+        O layout abaixo (flex-grow na <main>) já empurra o Footer para o final da página.
+        Apenas garanta que o seu componente <Footer /> tenha uma cor de fundo (ex: className="bg-black").
+        Isso criará a divisão visual que você precisa.
+      */}
       <Footer />
     </div>
   )
