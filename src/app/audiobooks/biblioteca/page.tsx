@@ -98,26 +98,27 @@ export default function AudiobooksLibraryPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
               </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="relative z-10 container mx-auto px-4 text-center text-golden">
           <div className="max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <Headphones className="w-10 h-10 text-golden" />
               </div>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-12">Biblioteca de Audiobooks</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-8">Biblioteca de Audiobooks</h1>
 
 
-            <p className="text-base md:text-xl mb-12 leading-relaxed">
+
+
+            <p className="text-base md:text-xl mb-8 leading-relaxed">
             Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
             sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+              <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
                 <Play className="w-5 h-5 mr-2" />
                 Começar a Ouvir
-                <Link href="/planos" aria-label="Nossos Planos"></Link>
               </Button>
               <Button
                 size="lg"
@@ -125,7 +126,6 @@ export default function AudiobooksLibraryPage() {
                 className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
               >
                 Ver Planos Premium
-                <Link href="/planos" aria-label="Nossos Planos"></Link>
               </Button>
             </div>
           </div>
@@ -255,7 +255,6 @@ export default function AudiobooksLibraryPage() {
                   <Button className="w-full bg-green-600 hover:bg-green-700">
                     <Play className="w-4 h-4 mr-2" />
                     {audiobook.premium ? "Ouvir (Premium)" : "Ouvir Grátis"}
-                    <Link href="/planos" aria-label="Nossos Planos"></Link>
                   </Button>
                 </CardContent>
               </Card>
