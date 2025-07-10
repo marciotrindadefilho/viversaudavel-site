@@ -98,7 +98,7 @@ export default function AudiobooksLibraryPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
               </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center text-golden">
+        <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <div className="max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
@@ -106,10 +106,6 @@ export default function AudiobooksLibraryPage() {
               </div>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-8">Biblioteca de Audiobooks</h1>
-
-
-
-
             <p className="text-base md:text-xl mb-8 leading-relaxed">
             Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
             sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
