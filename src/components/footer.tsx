@@ -39,6 +39,7 @@ export default function Footer() {
               <li><a href="/audiobooks/biblioteca" className="text-gray-300 hover:text-white transition-colors">Nossos Audibooks</a></li>
               <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
               <li><a href="/mais/depoimentos" className="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
+              <li><a href="/planos" className="text-gray-300 hover:text-white transition-colors">Nossos Planos</a></li>
             </ul>
           </div>
 

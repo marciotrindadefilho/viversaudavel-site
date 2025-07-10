@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { Search, Headphones, Play, Star, Clock, Volume2 } from "lucide-react"
+import { Search, Headphones, Play, Star, Clock, Volume2, Link } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -94,8 +94,8 @@ export default function AudiobooksLibraryPage() {
       {/* Hero Section */}
       <section className="relative py-20">
         <div className="absolute inset-0 z-0">
-          <Image src="/dna4.jpg" alt="DNA Background" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-pink-600/80" />
+          <Image src="/img.carrinho.png" alt="LOGO Background" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r " />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -107,20 +107,22 @@ export default function AudiobooksLibraryPage() {
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Biblioteca de Audiobooks</h1>
             <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-              Aprenda enquanto se exercita, dirige ou relaxa. Conteúdo profissional narrado por especialistas em
-              fisioterapia e reabilitação.
+            Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
+            sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
+              <Button size="lg" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
                 <Play className="w-5 h-5 mr-2" />
                 Começar a Ouvir
+                <Link href="/plano" aria-label="Nossos Planos"></Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-purple-600"
+                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
               >
                 Ver Planos Premium
+                <Link href="/plano" aria-label="Nossos Planos"></Link>
               </Button>
             </div>
           </div>
@@ -241,13 +243,13 @@ export default function AudiobooksLibraryPage() {
                   </div>
 
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-1 text-gray-500">
+                    <div className="flex items-center space-x-1 text-white-500">
                       <Headphones className="w-4 h-4" />
                       <span className="text-sm">{audiobook.listeners} ouvintes</span>
                     </div>
                   </div>
 
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700">
+                  <Button className="w-full bg-green-600 hover:bg-green-700">
                     <Play className="w-4 h-4 mr-2" />
                     {audiobook.premium ? "Ouvir (Premium)" : "Ouvir Grátis"}
                   </Button>
@@ -262,42 +264,42 @@ export default function AudiobooksLibraryPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Planos de Assinatura</h2>
-            <p className="text-lg text-gray-600">Escolha o plano ideal para suas necessidades</p>
+            <h2 className="text-4xl font-bold text-white-800 mb-4">Planos de Assinatura</h2>
+            <p className="text-lg text-white-600">Escolha o plano ideal para suas necessidades</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center p-6 border-2 hover:border-purple-500 transition-colors">
+            <Card className="text-center p-6 border-2 hover:border-green-500 transition-colors">
               <CardHeader>
                 <CardTitle className="text-2xl">Mensal</CardTitle>
-                <div className="text-3xl font-bold text-purple-600">R$ 30,00</div>
-                <p className="text-gray-600">por mês</p>
+                <div className="text-3xl font-bold text-white-600">R$ 30,00</div>
+                <p className="text-white-600">por mês</p>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Assinar</Button>
+                <Button className="w-full bg-green-600 hover:bg-green-700">Assinar</Button>
               </CardContent>
             </Card>
 
-            <Card className="text-center p-6 border-2 border-purple-500 relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600">Mais Popular</Badge>
+            <Card className="text-center p-6 border-2 border-green-500 relative">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600">Mais Popular</Badge>
               <CardHeader>
                 <CardTitle className="text-2xl">Trimestral</CardTitle>
-                <div className="text-3xl font-bold text-purple-600">R$ 60,00</div>
-                <p className="text-gray-600">3 meses</p>
+                <div className="text-3xl font-bold text-white-600">R$ 60,00</div>
+                <p className="text-white-600">3 meses</p>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Assinar</Button>
+                <Button className="w-full bg-green-600 hover:bg-green-700">Assinar</Button>
               </CardContent>
             </Card>
 
-            <Card className="text-center p-6 border-2 hover:border-purple-500 transition-colors">
+            <Card className="text-center p-6 border-2 hover:border-green-500 transition-colors">
               <CardHeader>
                 <CardTitle className="text-2xl">Anual</CardTitle>
-                <div className="text-3xl font-bold text-purple-600">R$ 45,00</div>
-                <p className="text-gray-600">por mês</p>
+                <div className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">R$ 45,00</div>
+                <p className="text-white-600">por mês</p>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-purple-600 hover:bg-purple-700">Assinar</Button>
+                <Button className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">Assinar</Button>
               </CardContent>
             </Card>
           </div>
