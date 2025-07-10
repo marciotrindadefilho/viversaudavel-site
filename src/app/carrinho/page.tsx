@@ -119,7 +119,7 @@ export default function CartPage() {
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h1 className={`text-4xl md:text-5xl font-bold ${titleColorClass}`}>Seu Carrinho</h1>
+              <h1 className={`text-base md:text-2xl font-bold ${titleColorClass}`}>Seu Carrinho</h1>
               <p className={`text-lg mt-2 ${subtitleColorClass}`}>Revise os seus itens antes de finalizar a compra.</p>
             </div>
             {hasItems && (

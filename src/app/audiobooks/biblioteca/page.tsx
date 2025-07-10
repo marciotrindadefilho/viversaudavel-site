@@ -114,7 +114,7 @@ export default function AudiobooksLibraryPage() {
               <Button size="lg" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
                 <Play className="w-5 h-5 mr-2" />
                 Começar a Ouvir
-                <Link href="/plano" aria-label="Nossos Planos"></Link>
+                <Link href="/planos" aria-label="Nossos Planos"></Link>
               </Button>
               <Button
                 size="lg"
@@ -122,7 +122,7 @@ export default function AudiobooksLibraryPage() {
                 className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
               >
                 Ver Planos Premium
-                <Link href="/plano" aria-label="Nossos Planos"></Link>
+                <Link href="/planos" aria-label="Nossos Planos"></Link>
               </Button>
             </div>
           </div>
@@ -252,6 +252,7 @@ export default function AudiobooksLibraryPage() {
                   <Button className="w-full bg-green-600 hover:bg-green-700">
                     <Play className="w-4 h-4 mr-2" />
                     {audiobook.premium ? "Ouvir (Premium)" : "Ouvir Grátis"}
+                    <Link href="/planos" aria-label="Nossos Planos"></Link>
                   </Button>
                 </CardContent>
               </Card>
