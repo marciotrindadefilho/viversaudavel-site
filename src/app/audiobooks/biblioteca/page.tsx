@@ -44,10 +44,10 @@ export default function AudiobooksLibraryPage() {
           <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
         </div>
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto flex flex-col items-center">
-            <div className="mb-6">
-              <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-black-500/50">
+        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex justify-center mb-6">
+               <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <Image src="/headphone.png" alt="Ícone de fones de ouvido" width={70} height={70} />
               </div>
             </div>
@@ -59,13 +59,13 @@ export default function AudiobooksLibraryPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#podcasts">
-                <Button size="lg" className="bg-gradient-to-br from-golden-500 via-golden-400 to-golden-500 text-white hover:bg-golden-600 transition-all duration-300 transform hover:shadow-golden-glow-hover shadow-golden-glow">
-                  <Play className="py-3 px-6 rounded-lg" />
+                <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
+                  <Play className="w-5 h-5 mr-2" />
                   Começar a Ouvir
                 </Button>
               </a>
               <Link href="/planos">
-                <Button size="lg" variant="outline" className="text-gray-200 border-gray-400 hover:bg-gray-200 hover:text-black transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
                   Ver Planos Premium
                 </Button>
               </Link>
