@@ -95,7 +95,7 @@ export default function AudiobooksLibraryPage() {
             <section className="relative py-20">
               <div className="absolute inset-0 z-0">
                 <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-green-600/80 to-blue-600/80" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
               </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
@@ -105,11 +105,13 @@ export default function AudiobooksLibraryPage() {
                 <Headphones className="w-10 h-10 text-golden" />
               </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Biblioteca de Audiobooks</h1>
-            <p className="text-xl md:text-2xl mb-8 leading-relaxed">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">Biblioteca de Audiobooks</h1>
+            <p className="text-base md:text-xl mb-8 leading-relaxed">
+
             Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
             sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
                 <Play className="w-5 h-5 mr-2" />
