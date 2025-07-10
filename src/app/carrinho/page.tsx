@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -110,21 +110,14 @@ export default function CartPage() {
   const total = subtotal - couponDiscount;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      
-      <main 
-        className="flex-grow relative"
-        style={{
-          // AJUSTE: Corrigido o nome do ficheiro para corresponder ao que enviou ('img-carinho.png')
-          backgroundImage: `url(/img-carrinho.png)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60 z-0" />
-
+      <main className="flex-grow relative">
+        <div className="absolute inset-0 z-0">
+          <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+          <div className="absolute inset-0 bg-white/60" />
+        </div>
+        
         {notification && (
           <div 
             className={`fixed top-24 right-5 z-50 p-4 rounded-lg shadow-lg text-white flex items-center gap-4 transition-transform duration-500 ${notification ? 'translate-x-0' : 'translate-x-[120%]'} ${notification.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
@@ -139,8 +132,8 @@ export default function CartPage() {
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white">Seu Carrinho</h1>
-              <p className="text-lg text-gray-300 mt-2">Revise os seus itens antes de finalizar a compra.</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800">Seu Carrinho</h1>
+              <p className="text-lg text-gray-600 mt-2">Revise os seus itens antes de finalizar a compra.</p>
             </div>
             <Card className="hidden md:block bg-white/90 backdrop-blur-sm">
               <CardContent className="p-4 flex items-center gap-4">
@@ -247,7 +240,6 @@ export default function CartPage() {
           )}
         </div>
       </main>
-
       <Footer />
     </div>
   )
