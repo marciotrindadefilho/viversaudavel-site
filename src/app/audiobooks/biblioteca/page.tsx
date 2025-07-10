@@ -1,181 +1,97 @@
 import Image from "next/image"
+import Link from "next/link" // Adicionado para os links dos botões
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { Search, Headphones, Play, Star, Clock, Volume2, Link } from "lucide-react"
+import { Search, Headphones, Play, Star, Clock, Volume2 } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 export default function AudiobooksLibraryPage() {
+  // Dados das categorias (mantidos)
   const categories = [
-    {
-      name: "Ortopedia",
-      description: "Lesões musculares, ligamentares, articulares, fraturas, pós-operatório",
-      image: "/audiobook.png",
-      color: "bg-red-500",
-      count: 18,
-    },
-    {
-      name: "Neurologia",
-      description: "AVC, Parkinson, esclerose múltipla, lesões medulares, paralisia cerebral",
-      image: "/audiobook.png",
-      color: "bg-blue-500",
-      count: 14,
-    },
-    {
-      name: "Respiratória",
-      description: "DPOC, asma, fibrose cística, pós-operatório de cirurgias torácicas",
-      image: "/audiobook.png",
-      color: "bg-green-500",
-      count: 12,
-    },
-    {
-      name: "Reabilitação Esportiva",
-      description: "Lesões esportivas, prevenção de lesões, retorno ao esporte",
-      image: "/audiobook.png",
-      color: "bg-orange-500",
-      count: 10,
-    },
-    {
-      name: "Cardiovascular",
-      description: "Reabilitação cardíaca, pós-infarto, insuficiência cardíaca",
-      image: "/audiobook.png",
-      color: "bg-purple-500",
-      count: 13,
-    },
-    {
-      name: "Geriatria",
-      description: "Reabilitação em idosos, sarcopenia, equilíbrio, quedas",
-      image: "/audiobook.png",
-      color: "bg-indigo-500",
-      count: 16,
-    },
+    { name: "Ortopedia", description: "Lesões musculares, articulares, fraturas...", image: "/orto.png", count: 18 },
+    { name: "Neurologia", description: "AVC, Parkinson, esclerose múltipla...", image: "/neuro.png", count: 14 },
+    { name: "Respiratória", description: "DPOC, asma, fibrose cística...", image: "/fisio6.png", count: 12 },
+    { name: "Reabilitação Esportiva", description: "Lesões esportivas, prevenção de lesões...", image: "/reab.png", count: 10 },
+    { name: "Cardiovascular", description: "Reabilitação cardíaca, pós-infarto...", image: "/resp.png", count: 13 },
+    { name: "Geriatria", description: "Reabilitação em idosos, quedas...", image: "/fisio5.png", count: 16 },
   ]
 
+  // Dados dos audiobooks em destaque (mantidos)
   const featuredAudiobooks = [
-    {
-      title: "Fundamentos da Fisioterapia Ortopédica",
-      narrator: "Dra. Georgia Espinola Moura",
-      category: "Ortopedia",
-      duration: "4h 32min",
-      rating: 4.9,
-      listeners: 850,
-      image: "/fisio3.png",
-      premium: true,
-    },
-    {
-      title: "Neuroplasticidade e Reabilitação",
-      narrator: "Dra. Georgia Espinola Moura",
-      category: "Neurologia",
-      duration: "3h 45min",
-      rating: 4.8,
-      listeners: 620,
-      image: "/fisio2.png",
-      premium: true,
-    },
-    {
-      title: "Técnicas de Respiração Terapêutica",
-      narrator: "Dra. Georgia Espinola Moura",
-      category: "Respiratória",
-      duration: "2h 18min",
-      rating: 4.7,
-      listeners: 490,
-      image: "/fisio6.png",
-      premium: false,
-    },
+    { title: "Fundamentos da Fisioterapia Ortopédica", narrator: "Dra. Georgia Espinola Moura", category: "Ortopedia", duration: "4h 32min", rating: 4.9, listeners: 850, image: "/fisio3.png", premium: true },
+    { title: "Neuroplasticidade e Reabilitação", narrator: "Dra. Georgia Espinola Moura", category: "Neurologia", duration: "3h 45min", rating: 4.8, listeners: 620, image: "/fisio2.png", premium: true },
+    { title: "Técnicas de Respiração Terapêutica", narrator: "Dra. Georgia Espinola Moura", category: "Respiratória", duration: "2h 18min", rating: 4.7, listeners: 490, image: "/fisio6.png", premium: false },
+  ]
+
+  // Array de podcasts para a nova seção
+  const podcasts = [
+      { title: "Podcast Ortopedia", description: "Episódios sobre prevenção e tratamento de lesões.", image: "/podcast-orto.png", color: "bg-blue-500 hover:bg-blue-600" },
+      { title: "Podcast Respiratória", description: "Dicas para uma respiração mais saudável e bem-estar.", image: "/podcast-resp.png", color: "bg-green-500 hover:bg-green-600" },
+      { title: "Podcast Geriatria", description: "Foco na saúde e qualidade de vida na terceira idade.", image: "/podcast-geria.png", color: "bg-purple-500 hover:bg-purple-600" },
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section Corrigida */}
-      <section className="relative py-20">
-        
-        {/* Fundo da Seção (Já estava correto) */}
+      {/* ===== 1. HERO SECTION ===== */}
+      <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
-
-        {/* Container Principal para o Conteúdo */}
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          
-          {/* Div para limitar a largura e alinhar no centro */}
-          <div className="max-w-4xl mx-auto">
-
-            {/* Ícone do Headphone */}
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-transparent/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                <Image
-                  src="/headphone.png"
-                  alt="Ícone de fones de ouvido"
-                  width={70}
-                  height={70}
-                />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto flex flex-col items-center">
+            <div className="mb-6">
+              <div className="w-24 h-24 bg-black/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-golden-500/50">
+                <Image src="/headphone.png" alt="Ícone de fones de ouvido" width={70} height={70} />
               </div>
             </div>
-
-            {/* Título */}
-            <h1 className="text-3xl md:text-4xl font-bold mb-32">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-golden-400" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.7)' }}>
               Biblioteca de Audiobooks
             </h1>
-
-            {/* Parágrafo de descrição */}
-            <p className="text-base md:text-xl leading-relaxed mb-12">
-              Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
-              sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
+            <p className="text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-gray-300">
+              Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
             </p>
-
-            {/* Botões */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
-                <Play className="w-5 h-5 mr-2" />
-                Começar a Ouvir
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
-              >
-                Ver Planos Premium
-              </Button>
+              <a href="#podcasts">
+                <Button size="lg" className="bg-golden-500 text-black hover:bg-golden-400 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <Play className="w-5 h-5 mr-2" />
+                  Começar a Ouvir
+                </Button>
+              </a>
+              <Link href="/planos">
+                <Button size="lg" variant="outline" className="text-gray-200 border-gray-400 hover:bg-gray-200 hover:text-black transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Ver Planos Premium
+                </Button>
+              </Link>
             </div>
-
-          </div> {/* Fim do div max-w-4xl */}
-        </div> {/* Fim do div container */}
+          </div>
+        </div>
       </section>
 
-      {/* Search and Filters */}
-      <section className="py-12 bg-gray-50">
+      {/* ===== 2. SEARCH AND FILTERS ===== */}
+      <section className="py-12 bg-gray-50 border-y border-gray-200">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="grid md:grid-cols-4 gap-4">
+            <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+              <div className="grid md:grid-cols-4 gap-4 items-center">
                 <div className="md:col-span-2">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <Input placeholder="Pesquisar audiobooks por título, narrador..." className="pl-10 h-12" />
+                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <Input placeholder="Pesquisar por título, narrador..." className="pl-12 h-12 rounded-lg" />
                   </div>
                 </div>
                 <Select>
-                  <SelectTrigger className="h-12">
-                    <SelectValue placeholder="Categoria" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {categories.map((category) => (
-                      <SelectItem key={category.name} value={category.name.toLowerCase()}>
-                        {category.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
+                  <SelectTrigger className="h-12 rounded-lg"><SelectValue placeholder="Categoria" /></SelectTrigger>
+                  <SelectContent>{categories.map(c => <SelectItem key={c.name} value={c.name.toLowerCase()}>{c.name}</SelectItem>)}</SelectContent>
                 </Select>
                 <Select>
-                  <SelectTrigger className="h-12">
-                    <SelectValue placeholder="Duração" />
-                  </SelectTrigger>
+                  <SelectTrigger className="h-12 rounded-lg"><SelectValue placeholder="Duração" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="short">Até 2h</SelectItem>
                     <SelectItem value="medium">2h - 5h</SelectItem>
@@ -188,87 +104,50 @@ export default function AudiobooksLibraryPage() {
         </div>
       </section>
 
-      {/* Categories Grid */}
-      <section className="py-16">
+      {/* ===== 3. CATEGORIES GRID ===== */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Categorias de Audiobooks</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Conteúdo narrado por profissionais especializados em cada área
-            </p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Explore Nossas Categorias</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Conteúdo narrado por profissionais especializados em cada área.</p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {categories.map((category, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow cursor-pointer group">
-                <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center`}>
-                      <Volume2 className="w-6 h-6 text-white" />
-                    </div>
-                    <Badge variant="secondary">{category.count} audiobooks</Badge>
-                  </div>
-                  <CardTitle className="group-hover:text-purple-600 transition-colors">{category.name}</CardTitle>
-                  <CardDescription className="text-sm">{category.description}</CardDescription>
-                </CardHeader>
-              </Card>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {categories.map((category) => (
+              <div key={category.name} className="flex flex-col items-center text-center group cursor-pointer">
+                <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-transparent group-hover:border-golden-400 transition-all duration-300 shadow-lg">
+                    <Image src={category.image} alt={category.name} fill className="object-cover" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-gray-700 group-hover:text-golden-500 transition-colors">{category.name}</h3>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Audiobooks */}
-      <section className="py-16 bg-gray-50">
+      {/* ===== 4. FEATURED AUDIOBOOKS ===== */}
+      <section className="py-20 bg-gray-50 border-y border-gray-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Audiobooks em Destaque</h2>
-            <p className="text-lg text-gray-600">Os mais ouvidos e bem avaliados da nossa biblioteca</p>
+            <p className="text-lg text-gray-600">Os mais ouvidos e bem avaliados da nossa biblioteca.</p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredAudiobooks.map((audiobook, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative h-48">
-                  <Image
-                    src={audiobook.image || "/placeholder.svg"}
-                    alt={audiobook.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                    <Button size="lg" className="bg-white text-black hover:bg-gray-100">
-                      <Play className="w-5 h-5 mr-2" />
-                      Reproduzir
-                    </Button>
-                  </div>
-                  {audiobook.premium && <Badge className="absolute top-4 right-4 bg-yellow-500">Premium</Badge>}
+            {featuredAudiobooks.map((audiobook) => (
+              <Card key={audiobook.title} className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border">
+                <div className="relative h-56">
+                  <Image src={audiobook.image} alt={audiobook.title} fill className="object-cover" />
+                  {audiobook.premium && <Badge className="absolute top-4 right-4 bg-golden-500 text-black shadow-md">Premium</Badge>}
                 </div>
                 <CardContent className="p-6">
-                  <Badge variant="outline" className="mb-2">
-                    {audiobook.category}
-                  </Badge>
-                  <h3 className="text-xl font-semibold mb-2">{audiobook.title}</h3>
-                  <p className="text-gray-600 mb-2">Narrado por {audiobook.narrator}</p>
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4 text-gray-500" />
-                      <span className="text-sm text-gray-600">{audiobook.duration}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm font-medium">{audiobook.rating}</span>
-                    </div>
+                  <Badge variant="outline" className="mb-2">{audiobook.category}</Badge>
+                  <h3 className="text-xl font-semibold mb-2 h-14">{audiobook.title}</h3>
+                  <p className="text-gray-500 text-sm mb-4">Narrado por {audiobook.narrator}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-600 mb-6">
+                    <div className="flex items-center space-x-2"><Clock className="w-4 h-4" /><span>{audiobook.duration}</span></div>
+                    <div className="flex items-center space-x-2"><Star className="w-4 h-4 text-yellow-400" /><span>{audiobook.rating}</span></div>
+                    <div className="flex items-center space-x-2"><Headphones className="w-4 h-4" /><span>{audiobook.listeners}</span></div>
                   </div>
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-1 text-white-500">
-                      <Headphones className="w-4 h-4" />
-                      <span className="text-sm">{audiobook.listeners} ouvintes</span>
-                    </div>
-                  </div>
-
-                  <Button className="w-full bg-green-600 hover:bg-green-700">
+                  <Button className="w-full bg-green-600 hover:bg-green-700 rounded-lg">
                     <Play className="w-4 h-4 mr-2" />
                     {audiobook.premium ? "Ouvir (Premium)" : "Ouvir Grátis"}
                   </Button>
@@ -279,53 +158,31 @@ export default function AudiobooksLibraryPage() {
         </div>
       </section>
 
-      {/* Subscription Plans */}
-      <section className="py-16">
+      {/* ===== 5. PODCASTS VIDA SAUDÁVEL ===== */}
+      <section className="py-20 bg-white" id="podcasts">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white-800 mb-4">Planos de Assinatura</h2>
-            <p className="text-lg text-white-600">Escolha o plano ideal para suas necessidades</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Podcasts Vida Saudável</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">Conteúdos em áudio sobre bem-estar e saúde para o seu dia a dia.</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center p-6 border-2 hover:border-green-500 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-2xl">Mensal</CardTitle>
-                <div className="text-3xl font-bold text-white-600">R$ 30,00</div>
-                <p className="text-white-600">por mês</p>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full bg-green-600 hover:bg-green-700">Assinar</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6 border-2 border-green-500 relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-600">Mais Popular</Badge>
-              <CardHeader>
-                <CardTitle className="text-2xl">Trimestral</CardTitle>
-                <div className="text-3xl font-bold text-white-600">R$ 60,00</div>
-                <p className="text-white-600">3 meses</p>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full bg-green-600 hover:bg-green-700">Assinar</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6 border-2 hover:border-green-500 transition-colors">
-              <CardHeader>
-                <CardTitle className="text-2xl">Anual</CardTitle>
-                <div className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">R$ 45,00</div>
-                <p className="text-white-600">por mês</p>
-              </CardHeader>
-              <CardContent>
-                <Button className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">Assinar</Button>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {podcasts.map((podcast) => (
+                <Card key={podcast.title} className="text-center rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 border overflow-hidden group">
+                    <div className="relative h-48">
+                        <Image src={podcast.image} alt={podcast.title} fill className="object-cover" />
+                    </div>
+                    <div className="p-6">
+                        <CardTitle className="text-xl font-semibold mb-2">{podcast.title}</CardTitle>
+                        <p className="text-gray-600 mb-4 text-sm h-12">{podcast.description}</p>
+                        <Button className={`w-full rounded-lg text-white font-bold transition-transform duration-300 group-hover:scale-105 ${podcast.color}`}>Ouvir Agora</Button>
+                    </div>
+                </Card>
+            ))}
           </div>
         </div>
       </section>
 
       <Footer />
     </div>
-  )
+  );
 }
