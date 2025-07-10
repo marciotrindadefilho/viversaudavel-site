@@ -92,11 +92,11 @@ export default function AudiobooksLibraryPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative py-20">
-        <div className="absolute inset-0 z-0">
-          <Image src="img.carrinho.png" alt=" Viver Saudável" fill className="object-cover" />
-          <div className="absolute inset-0" />
-        </div>
+            <section className="relative py-20">
+              <div className="absolute inset-0 z-0">
+                <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-600/80 to-blue-600/80" />
+              </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <div className="max-w-4xl mx-auto">
