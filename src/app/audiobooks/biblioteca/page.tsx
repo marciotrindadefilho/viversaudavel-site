@@ -99,9 +99,9 @@ export default function AudiobooksLibraryPage() {
   </div>
 
   <div className="relative z-10 container mx-auto px-4 text-center text-white">
-    <div className="max-w-4xl mx-auto">
-      <div className="flex justify-center mb-4">
-        <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+    <div className="">
+      <div className="">
+        <div className="">
         </div>
       </div>
       
