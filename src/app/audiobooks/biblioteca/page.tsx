@@ -100,9 +100,9 @@ export default function AudiobooksLibraryPage() {
 
   <div className="relative z-10 container mx-auto px-4 text-center text-white">
     <div className="max-w-4xl mx-auto">
-      <div className="flex justify-center mb-6">
-        <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-          <Headphones className="w-10 h-10 text-golden" />
+      <div className="flex justify-center mb-4">
+        <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+          <Headphones className="w-10 h-10 text-white" />
         </div>
       </div>
       
@@ -128,7 +128,7 @@ export default function AudiobooksLibraryPage() {
         <Button
           size="lg"
           variant="outline"
-          className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+          className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white"
         >
           Ver Planos Premium
         </Button>
