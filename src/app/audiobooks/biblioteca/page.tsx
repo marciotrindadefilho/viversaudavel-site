@@ -91,50 +91,62 @@ export default function AudiobooksLibraryPage() {
     <div className="min-h-screen">
       <Header />
 
-      {/* Hero Section Modificada */}
-<section className="relative py-20">
-  <div className="absolute inset-0 z-0">
-    <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
-  </div>
-
-  <div className="relative z-10 container mx-auto px-4 text-center text-white">
-    <div className="">
-      <div className="">
-        <div className="">
+      {/* Hero Section Corrigida */}
+      <section className="relative py-20">
+        
+        {/* Fundo da Seção (Já estava correto) */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
         </div>
-      </div>
-      
-      {/* Ajuste aqui: Aumente a margem inferior (mb) para criar o espaço desejado. 
-        Você pode testar valores como mb-24, mb-32, ou mb-40 para ver qual se encaixa melhor.
-      */}
-      <h1 className="text-3xl md:text-4xl font-bold mb-32">
-        Biblioteca de Audiobooks
-      </h1>
 
-      {/* Ajuste aqui: Remova a margem inferior anterior e adicione uma nova para ajustar o espaço até os botões.
-      */}
-      <p className="text-base md:text-xl leading-relaxed mb-12">
-        Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
-        sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
-      </p>
+        {/* Container Principal para o Conteúdo */}
+        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+          
+          {/* Div para limitar a largura e alinhar no centro */}
+          <div className="max-w-4xl mx-auto">
 
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
-          <Play className="w-5 h-5 mr-2" />
-          Começar a Ouvir
-        </Button>
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white"
-        >
-          Ver Planos Premium
-        </Button>
-      </div>
-    </div>
-  </div>
-</section>
+            {/* Ícone do Headphone */}
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <Image
+                  src="/headphone.png"
+                  alt="Ícone de fones de ouvido"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            </div>
+
+            {/* Título */}
+            <h1 className="text-3xl md:text-4xl font-bold mb-32">
+              Biblioteca de Audiobooks
+            </h1>
+
+            {/* Parágrafo de descrição */}
+            <p className="text-base md:text-xl leading-relaxed mb-12">
+              Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
+              sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
+            </p>
+
+            {/* Botões */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
+                <Play className="w-5 h-5 mr-2" />
+                Começar a Ouvir
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+              >
+                Ver Planos Premium
+              </Button>
+            </div>
+
+          </div> {/* Fim do div max-w-4xl */}
+        </div> {/* Fim do div container */}
+      </section>
 
       {/* Search and Filters */}
       <section className="py-12 bg-gray-50">
