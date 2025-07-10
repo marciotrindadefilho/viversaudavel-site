@@ -105,7 +105,7 @@ export default function AudiobooksLibraryPage() {
                 <Headphones className="w-10 h-10 text-golden" />
               </div>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-16">Biblioteca de Audiobooks</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-22">Biblioteca de Audiobooks</h1>
             <p className="text-base md:text-xl leading-relaxed">Aprenda enquanto se exercita, dirige ou relaxa. Ciência que respira com você: conteúdos em áudio
             sobre fisioterapia cardiorrespiratória e uma vida mais saudável.
             </p>
