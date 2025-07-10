@@ -108,12 +108,12 @@ export default function AudiobooksLibraryPage() {
 
             {/* Ícone do Headphone */}
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 bg-transparent/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <Image
                   src="/headphone.png"
                   alt="Ícone de fones de ouvido"
-                  width={40}
-                  height={40}
+                  width={70}
+                  height={70}
                 />
               </div>
             </div>
