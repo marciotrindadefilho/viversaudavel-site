@@ -12,7 +12,7 @@ import { Trash2, Plus, Minus, ShoppingBag, CreditCard, Gift, ArrowLeft, X } from
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-// Interface para definir a estrutura de um item do carrinho
+// Interfaces... (mantidas como estavam)
 interface CartItem {
   id: number;
   title: string;
@@ -26,38 +26,15 @@ interface CartItem {
   description?: string;
 }
 
-// Interface para o estado da notificação
 interface NotificationState {
   message: string;
   type: 'success' | 'error';
 }
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 1,
-      title: "Manual Completo de Ortopedia",
-      type: "E-book",
-      price: 49.9,
-      originalPrice: 79.9,
-      quantity: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cor1-OegWOEIsmHdF6dASgvE3gjbYyQNs3D.png",
-      category: "Ortopedia",
-      author: "Dr. João Silva",
-    },
-    {
-      id: 2,
-      title: "Neuroreabilitação Avançada",
-      type: "Audiobook",
-      price: 39.9,
-      originalPrice: 59.9,
-      quantity: 1,
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nutri3-UH9YKFWIEtaIEWjdi8cBdeLiLKlevw.png",
-      category: "Neurologia",
-      author: "Dra. Maria Santos",
-    },
-  ]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  // Funções de state e handlers (mantidas como estavam)
   const [couponCode, setCouponCode] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
   const [notification, setNotification] = useState<NotificationState | null>(null);
@@ -109,15 +86,25 @@ export default function CartPage() {
   const couponDiscount = appliedCoupon ? (subtotal * appliedCoupon.discount) / 100 : 0;
   const total = subtotal - couponDiscount;
 
+  // Lógica para classes dinâmicas
+  const hasItems = cartItems.length > 0;
+  const mainBgClass = hasItems ? 'bg-gray-100' : 'bg-black';
+  const titleColorClass = hasItems ? 'text-gray-800' : 'text-white';
+  const subtitleColorClass = hasItems ? 'text-gray-600' : 'text-gray-300';
+
+
   return (
-    <div className="flex flex-col min-h-screen bg-black">
+    <div className={`flex flex-col min-h-screen ${mainBgClass}`}>
       <Header />
       <main className="flex-grow relative">
-        <div className="absolute inset-0 z-0 opacity-40"> {/* Opacidade ajustada para melhor leitura */}
-          {/* ✅ SUA IMAGEM DE FUNDO SEM FILTRO */}
-          <Image src="/img-carrinho.png" alt="Viver Saudável Fundo" fill className="object-cover" />
-        </div>
+        {/* LOGO SÓ APARECE COM CARRINHO VAZIO */}
+        {!hasItems && (
+          <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20">
+            <Image src="/img-carrinho.png" alt="Viver Saudável Fundo" width={500} height={500} className="object-contain" />
+          </div>
+        )}
         
+        {/* ✅ CÓDIGO DA NOTIFICAÇÃO CORRIGIDO E NO LUGAR CERTO */}
         {notification && (
           <div 
             className={`fixed top-24 right-5 z-50 p-4 rounded-lg shadow-lg text-white flex items-center gap-4 transition-transform duration-500 ${notification ? 'translate-x-0' : 'translate-x-[120%]'} ${notification.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
@@ -132,26 +119,27 @@ export default function CartPage() {
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="flex justify-between items-center mb-12">
             <div>
-              {/* ✅ TEXTO COM DESTAQUE BRANCO */}
-              <h1 className="text-4xl md:text-5xl font-bold text-white">Seu Carrinho</h1>
-              <p className="text-lg text-gray-200 mt-2">Revise os seus itens antes de finalizar a compra.</p>
+              <h1 className={`text-4xl md:text-5xl font-bold ${titleColorClass}`}>Seu Carrinho</h1>
+              <p className={`text-lg mt-2 ${subtitleColorClass}`}>Revise os seus itens antes de finalizar a compra.</p>
             </div>
-            <Card className="hidden md:block bg-white/90 backdrop-blur-sm">
-              <CardContent className="p-4 flex items-center gap-4">
-                <div className="bg-green-600 rounded-lg p-3">
-                  <ShoppingBag className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-gray-600">Itens no carrinho</p>
-                  <p className="text-2xl font-bold text-gray-800">{cartItems.length}</p>
-                </div>
-              </CardContent>
-            </Card>
+            {hasItems && (
+              <Card className="hidden md:block bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-4 flex items-center gap-4">
+                  <div className="bg-green-600 rounded-lg p-3">
+                    <ShoppingBag className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-gray-600">Itens no carrinho</p>
+                    <p className="text-2xl font-bold text-gray-800">{cartItems.length}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
 
-          {cartItems.length === 0 ? (
-            <div className="text-center py-24 bg-black/50 backdrop-blur-sm rounded-lg">
-              <ShoppingBag className="w-24 h-24 text-gray-300 mx-auto mb-6" />
+          {!hasItems ? (
+            <div className="text-center py-24">
+              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-6" />
               <h2 className="text-2xl font-semibold text-gray-100 mb-4">O seu carrinho está vazio</h2>
               <p className="text-gray-300 mb-8">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
               <Link href="/">
@@ -165,7 +153,7 @@ export default function CartPage() {
             <div className="grid lg:grid-cols-3 lg:gap-8">
               <div className="lg:col-span-2 space-y-4">
                 {cartItems.map((item) => (
-                  <Card key={item.id} className="overflow-hidden bg-white/95 backdrop-blur-sm shadow-md">
+                  <Card key={item.id} className="overflow-hidden bg-white shadow-md">
                     <CardContent className="p-4 flex gap-4">
                       <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
                         <Image src={item.image} alt={item.title} fill className="object-cover rounded-lg" />
@@ -203,9 +191,8 @@ export default function CartPage() {
                   </Card>
                 ))}
               </div>
-
               <div className="lg:sticky lg:top-24 space-y-6 mt-8 lg:mt-0">
-                <Card className="bg-white/95 backdrop-blur-sm shadow-lg">
+                <Card className="bg-white shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-2xl">Resumo do Pedido</CardTitle>
                   </CardHeader>
@@ -223,8 +210,7 @@ export default function CartPage() {
                     </Button>
                   </CardFooter>
                 </Card>
-                
-                <Card className="bg-white/95 backdrop-blur-sm shadow-lg">
+                <Card className="bg-white shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center text-xl"><Gift className="w-5 h-5 mr-2 text-green-600" /> Cupom de Desconto</CardTitle>
                   </CardHeader>
@@ -241,11 +227,12 @@ export default function CartPage() {
           )}
         </div>
       </main>
-      {/* ✅ DIVISÃO PARA O FOOTER:
-        O layout abaixo (flex-grow na <main>) já empurra o Footer para o final da página.
-        Apenas garanta que o seu componente <Footer /> tenha uma cor de fundo (ex: className="bg-black").
-        Isso criará a divisão visual que você precisa.
-      */}
+
+      {/* EFEITO SEPARADOR PARA O RODAPÉ */}
+      {!hasItems && (
+         <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+      )}
+
       <Footer />
     </div>
   )
