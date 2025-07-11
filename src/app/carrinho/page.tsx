@@ -99,9 +99,10 @@ export default function CartPage() {
       <main className="flex-grow relative">
         {/* LOGO SÓ APARECE COM CARRINHO VAZIO */}
         {!hasItems && (
-          <div className="absolute inset-0 z-0">
-            <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/100 to-transparent-600/100" />
+          <div className="absolute inset-0 z-0 flex items-center justify-center" >
+            {/* A imagem agora é um item flexível */}
+            <Image src="/img-carrinho.png" alt="Background" fill className="object-container" />
+            <div className="transform -translate-y-1/2"/> {/* A imagem fica transparente entre os textos */}
           </div>
         )}
         
