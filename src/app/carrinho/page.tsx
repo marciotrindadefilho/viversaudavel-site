@@ -99,9 +99,9 @@ export default function CartPage() {
       <main className="flex-grow relative">
         {/* LOGO SÓ APARECE COM CARRINHO VAZIO */}
         {!hasItems && (
-          <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20">
-            <Image src="/img-carrinho.png" alt="Viver Saudável Fundo" width={600} height={600} className="object-contain" />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
+          <div className="absolute inset-0 z-0">
+            <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/100 to-transparent-600/100" />
           </div>
         )}
         
@@ -130,8 +130,8 @@ export default function CartPage() {
                     <ShoppingBag className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-600">Itens no carrinho</p>
-                    <p className="text-2xl font-bold text-gray-800">{cartItems.length}</p>
+                    <p className="text-gray-200">Itens no carrinho</p>
+                    <p className="text-2xl font-bold text-gray-300">{cartItems.length}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -140,9 +140,9 @@ export default function CartPage() {
 
           {!hasItems ? (
             <div className="text-center py-24">
-              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-18" />
-              <h2 className="text-2xl font-semibold text-gray-100 mb-32">O seu carrinho está vazio</h2>
-              <p className="text-gray-300 mb-16">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
+              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-2" />
+              <h1 className="text-xl font-weight 700 text-gray-100 mb-4">O seu carrinho está vazio</h1>
+              <p className="text-base font-weight 400 text-gray-200 mb-12">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
               <Link href="/">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700">
                   <ArrowLeft className="w-5 h-5 mr-2" />
