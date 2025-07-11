@@ -104,7 +104,7 @@ export default function CheckoutPage() {
 
         <div className="relative z-10 container mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Finalizar Compra</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white-200 mb-4">Finalizar Compra</h1>
             <div className="flex justify-center items-center space-x-4 mb-6">
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center ${step >= 1 ? "bg-green-600 text-white" : "bg-gray-300"}`}
