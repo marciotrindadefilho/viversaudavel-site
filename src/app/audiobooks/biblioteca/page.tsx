@@ -29,9 +29,9 @@ export default function AudiobooksLibraryPage() {
 
   // Array de podcasts para a nova seção
   const podcasts = [
-      { title: "Podcast Ortopedia", description: "Episódios sobre prevenção e tratamento de lesões.", image: "/podcast-orto.png", color: "bg-blue-500 hover:bg-blue-600" },
-      { title: "Podcast Respiratória", description: "Dicas para uma respiração mais saudável e bem-estar.", image: "/podcast-resp.png", color: "bg-green-500 hover:bg-green-600" },
-      { title: "Podcast Geriatria", description: "Foco na saúde e qualidade de vida na terceira idade.", image: "/podcast-geria.png", color: "bg-purple-500 hover:bg-purple-600" },
+      { title: "Podcast Ortopedia", description: "Episódios sobre prevenção e tratamento de lesões.", image: "/pod-ort.png", color: "bg-blue-500 hover:bg-blue-600" },
+      { title: "Podcast Respiratória", description: "Dicas para uma respiração mais saudável e bem-estar.", image: "/pod-resp.png", color: "bg-green-500 hover:bg-green-600" },
+      { title: "Podcast Geriatria", description: "Foco na saúde e qualidade de vida na terceira idade.", image: "/pod-ger.png", color: "bg-purple-500 hover:bg-purple-600" },
   ]
 
   return (
