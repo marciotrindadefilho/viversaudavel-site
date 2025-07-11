@@ -174,7 +174,7 @@ export default function AudiobooksLibraryPage() {
                     <div className="p-6">
                         <CardTitle className="text-xl font-semibold mb-2">{podcast.title}</CardTitle>
                         <p className="text-gray-600 mb-4 text-sm h-12">{podcast.description}</p>
-                        <Button className={`w-full rounded-lg text-white font-bold transition-transform duration-300 group-hover:scale-105 ${podcast.color}`}>Ouvir Agora</Button>
+                        <Button className="w-full bg-green-600 hover:bg-green-700 rounded-lg">Ouvir Agora</Button>
                     </div>
                 </Card>
             ))}
