@@ -12,7 +12,7 @@ import { Trash2, Plus, Minus, ShoppingBag, CreditCard, Gift, ArrowLeft, X } from
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-// Interfaces... (mantidas como estavam)
+// Interfaces
 interface CartItem {
   id: number;
   title: string;
@@ -32,13 +32,14 @@ interface NotificationState {
 }
 
 export default function CartPage() {
+  // --- STATE MANAGEMENT ---
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-
-  // Funções de state e handlers (mantidas como estavam)
   const [couponCode, setCouponCode] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
   const [notification, setNotification] = useState<NotificationState | null>(null);
+  const [isCheckingOut, setIsCheckingOut] = useState(false); // Estado para o processo de checkout
 
+  // --- HANDLERS E FUNÇÕES ---
   const showNotification = (message: string, type: 'success' | 'error') => {
     setNotification({ message, type });
     setTimeout(() => {
@@ -75,38 +76,55 @@ export default function CartPage() {
   };
   
   const handleCheckout = () => {
-    console.log("Iniciando processo de checkout...");
-    console.log("Itens no carrinho:", cartItems);
-    console.log("Total a ser cobrado:", total.toFixed(2));
+    if (isCheckingOut) return; // Previne cliques duplos
+
+    setIsCheckingOut(true);
     showNotification("Redirecionando para o pagamento...", "success");
+
+    // Simula uma chamada de API e redirecionamento
+    setTimeout(() => {
+      console.log("Iniciando processo de checkout...");
+      console.log("Itens no carrinho:", cartItems);
+      console.log("Total a ser cobrado:", total.toFixed(2));
+      // Lógica de redirecionamento real iria aqui. Ex: window.location.href = '/checkout';
+      setIsCheckingOut(false);
+    }, 2000);
   };
 
+  // --- CÁLCULOS ---
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const savings = cartItems.reduce((sum, item) => sum + ((item.originalPrice || item.price) - item.price) * item.quantity, 0);
   const couponDiscount = appliedCoupon ? (subtotal * appliedCoupon.discount) / 100 : 0;
   const total = subtotal - couponDiscount;
 
-  // Lógica para classes dinâmicas
+  // --- LÓGICA DE RENDERIZAÇÃO DINÂMICA ---
   const hasItems = cartItems.length > 0;
-  const mainBgClass = hasItems ? 'bg-gray-100' : 'bg-black';
-  const titleColorClass = hasItems ? 'text-gray-800' : 'text-white';
-  const subtitleColorClass = hasItems ? 'text-gray-600' : 'text-gray-300';
-
+  const mainBgClass = hasItems ? 'bg-gray-50' : 'bg-black'; // Fundo cinza claro com itens, preto quando vazio
 
   return (
     <div className={`flex flex-col min-h-screen ${mainBgClass}`}>
       <Header />
+      
       <main className="flex-grow relative">
-        {/* LOGO SÓ APARECE COM CARRINHO VAZIO */}
+        {/* EFEITOS VISUAIS PARA CARRINHO VAZIO */}
         {!hasItems && (
-          <div className="absolute inset-0 z-0 flex items-center justify-center" >
-            {/* A imagem agora é um item flexível */}
-            <Image src="/img-carrinho.png" alt="Background" fill className="object-container" />
-            <div className="transform -translate-y-1/2"/> {/* A imagem fica transparente entre os textos */}
-          </div>
+          <>
+            {/* Camada 1: Imagem de Fundo */}
+            <div className="absolute inset-0 z-0">
+              <Image 
+                src="/img-carrinho.png" 
+                alt="Mulher meditando em um ambiente sereno para representar bem-estar"
+                fill 
+                className="object-cover"
+                quality={80}
+              />
+            </div>
+            {/* Camada 2: Overlay de Gradiente para Harmonização e Legibilidade */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+          </>
         )}
         
-        {/* ✅ CÓDIGO DA NOTIFICAÇÃO CORRIGIDO E NO LUGAR CERTO */}
+        {/* COMPONENTE DE NOTIFICAÇÃO */}
         {notification && (
           <div 
             className={`fixed top-24 right-5 z-50 p-4 rounded-lg shadow-lg text-white flex items-center gap-4 transition-transform duration-500 ${notification ? 'translate-x-0' : 'translate-x-[120%]'} ${notification.type === 'success' ? 'bg-green-600' : 'bg-red-600'}`}
@@ -118,119 +136,124 @@ export default function CartPage() {
           </div>
         )}
 
-        <div className="relative z-10 container mx-auto px-4 py-16">
-          <div className="flex justify-between items-center mb-4">
-            <div>
-              <h1 className={`text-base md:text-2xl font-bold ${titleColorClass}`}>Seu Carrinho</h1>
-              <p className={`text-base mt-2 ${subtitleColorClass}`}>Revise os seus itens antes de finalizar a compra.</p>
-            </div>
-            {hasItems && (
-              <Card className="hidden md:block bg-white/90 backdrop-blur-sm">
-                <CardContent className="p-4 flex items-center gap-4">
-                  <div className="bg-green-600 rounded-lg p-3">
-                    <ShoppingBag className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-gray-200">Itens no carrinho</p>
-                    <p className="text-2xl font-bold text-gray-300">{cartItems.length}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-          </div>
-
+        {/* CONTAINER PRINCIPAL DO CONTEÚDO */}
+        <div className="relative z-10 container mx-auto px-4 py-12 md:py-16">
+          
+          {/* RENDERIZAÇÃO CONDICIONAL: CARRINHO VAZIO OU COM ITENS */}
           {!hasItems ? (
-            <div className="text-center py-24">
-              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-32" />
-              <h1 className="text-xl font-weight 700 text-gray-100 mb-6">O seu carrinho está vazio</h1>
-              <p className="text-base font-weight 400 text-gray-200 mb-12">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
+            // --- SEÇÃO DE CARRINHO VAZIO ---
+            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center text-white px-4">
+              <ShoppingBag className="w-20 h-20 md:w-24 md:h-24 text-gray-400/80 mb-6" strokeWidth={1.5} />
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Seu carrinho está vazio
+              </h1>
+              <p className="max-w-md text-base md:text-lg text-gray-300 mb-8">
+                Parece que você ainda não adicionou nenhum produto. Que tal explorar nosso catálogo e começar agora?
+              </p>
               <Link href="/">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white font-bold text-base h-12 px-8">
                   <ArrowLeft className="w-5 h-5 mr-2" />
                   Continuar a Comprar
                 </Button>
               </Link>
             </div>
           ) : (
-            <div className="grid lg:grid-cols-3 lg:gap-8">
-              <div className="lg:col-span-2 space-y-4">
-                {cartItems.map((item) => (
-                  <Card key={item.id} className="overflow-hidden bg-white shadow-md">
-                    <CardContent className="p-4 flex gap-4">
-                      <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
-                        <Image src={item.image} alt={item.title} fill className="object-cover rounded-lg" />
-                      </div>
-                      <div className="flex-1 flex flex-col justify-between">
-                        <div>
+            // --- SEÇÃO DE CARRINHO COM ITENS ---
+            <>
+              <div className="flex justify-between items-center mb-8">
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Seu Carrinho</h1>
+                  <p className="text-base text-gray-600 mt-1">Revise os seus itens antes de finalizar a compra.</p>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-3 lg:gap-12">
+                {/* Coluna da Esquerda: Itens */}
+                <div className="lg:col-span-2 space-y-4">
+                  {cartItems.map((item) => (
+                    <Card key={item.id} className="overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <CardContent className="p-4 flex gap-4">
+                        <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0">
+                          <Image src={item.image} alt={item.title} fill className="object-cover rounded-lg" />
+                        </div>
+                        <div className="flex-1 flex flex-col">
                           <div className="flex justify-between items-start">
-                            <h3 className="font-semibold text-lg text-gray-800">{item.title}</h3>
-                            <Button variant="ghost" size="icon" onClick={() => removeItem(item.id)} className="text-red-500 hover:bg-red-100 h-8 w-8">
+                            <h3 className="font-semibold text-lg text-gray-800 flex-1 pr-2">{item.title}</h3>
+                            <Button variant="ghost" size="icon" onClick={() => removeItem(item.id)} className="text-gray-400 hover:text-red-500 hover:bg-red-50 h-8 w-8 flex-shrink-0">
                               <Trash2 className="w-4 h-4" />
                             </Button>
                           </div>
-                          <Badge variant="secondary">{item.type}</Badge>
-                          <p className="text-sm text-gray-500 mt-1">{item.author || item.description}</p>
-                        </div>
-                        <div className="flex justify-between items-end mt-2">
-                          <div className="flex items-center space-x-2">
-                            <Button variant="outline" size="icon" onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.type === "Assinatura"} className="h-8 w-8">
-                              <Minus className="w-4 h-4" />
-                            </Button>
-                            <span className="w-8 text-center font-medium">{item.quantity}</span>
-                            <Button variant="outline" size="icon" onClick={() => updateQuantity(item.id, item.quantity + 1)} disabled={item.type === "Assinatura"} className="h-8 w-8">
-                              <Plus className="w-4 h-4" />
-                            </Button>
+                          <Badge variant="secondary" className="w-fit mt-1">{item.type}</Badge>
+                          <div className="flex-grow" /> {/* Empurra o conteúdo abaixo para o final */}
+                          <div className="flex justify-between items-end mt-2">
+                            <div className="flex items-center space-x-2">
+                              <Button variant="outline" size="icon" onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.type === "Assinatura"} className="h-8 w-8">
+                                <Minus className="w-4 h-4" />
+                              </Button>
+                              <span className="w-8 text-center font-medium">{item.quantity}</span>
+                              <Button variant="outline" size="icon" onClick={() => updateQuantity(item.id, item.quantity + 1)} disabled={item.type === "Assinatura"} className="h-8 w-8">
+                                <Plus className="w-4 h-4" />
+                              </Button>
+                            </div>
+                            <div className="text-right">
+                              {item.originalPrice && (
+                                <p className="text-sm text-gray-500 line-through">R$ {item.originalPrice.toFixed(2)}</p>
+                              )}
+                              <p className="font-bold text-lg text-green-600">R$ {(item.price * item.quantity).toFixed(2)}</p>
+                            </div>
                           </div>
-                          <div className="text-right">
-                            {item.originalPrice && (
-                              <p className="text-sm text-gray-500 line-through">R$ {item.originalPrice.toFixed(2)}</p>
-                            )}
-                            <p className="font-semibold text-lg text-green-600">R$ {(item.price * item.quantity).toFixed(2)}</p>
-                          </div>
                         </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
+                {/* Coluna da Direita: Resumo e Cupom */}
+                <div className="lg:sticky lg:top-24 space-y-6 mt-8 lg:mt-0 h-fit">
+                  <Card className="bg-white shadow-lg">
+                    <CardHeader>
+                      <CardTitle className="text-2xl">Resumo do Pedido</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="flex justify-between text-gray-600"><span>Subtotal</span><span>R$ {subtotal.toFixed(2)}</span></div>
+                      {savings > 0 && <div className="flex justify-between text-green-600"><span>Economia</span><span>-R$ {savings.toFixed(2)}</span></div>}
+                      {couponDiscount > 0 && <div className="flex justify-between text-green-600"><span>Desconto do Cupom</span><span>-R$ {couponDiscount.toFixed(2)}</span></div>}
+                      <Separator />
+                      <div className="flex justify-between text-xl font-bold"><span>Total</span><span className="text-green-600">R$ {total.toFixed(2)}</span></div>
+                    </CardContent>
+                    <CardFooter>
+                      <Button onClick={handleCheckout} disabled={isCheckingOut} className="w-full bg-green-600 hover:bg-green-700 h-12 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
+                        {isCheckingOut ? (
+                          <span className="animate-pulse">Processando...</span>
+                        ) : (
+                          <>
+                            <CreditCard className="w-5 h-5 mr-2" />
+                            Finalizar Compra
+                          </>
+                        )}
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                  <Card className="bg-white shadow-lg">
+                    <CardHeader>
+                      <CardTitle className="flex items-center text-xl"><Gift className="w-5 h-5 mr-2 text-green-600" /> Cupom de Desconto</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex space-x-2">
+                        <Input placeholder="Digite o seu cupom" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
+                        <Button onClick={applyCoupon} variant="outline">Aplicar</Button>
                       </div>
+                      {appliedCoupon && <p className="text-green-600 text-sm mt-2">Cupom {appliedCoupon.code} aplicado!</p>}
                     </CardContent>
                   </Card>
-                ))}
+                </div>
               </div>
-              <div className="lg:sticky lg:top-24 space-y-6 mt-8 lg:mt-0">
-                <Card className="bg-white shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Resumo do Pedido</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex justify-between text-gray-600"><span>Subtotal</span><span>R$ {subtotal.toFixed(2)}</span></div>
-                    {savings > 0 && <div className="flex justify-between text-green-600"><span>Economia</span><span>-R$ {savings.toFixed(2)}</span></div>}
-                    {couponDiscount > 0 && <div className="flex justify-between text-green-600"><span>Desconto do Cupom</span><span>-R$ {couponDiscount.toFixed(2)}</span></div>}
-                    <Separator />
-                    <div className="flex justify-between text-xl font-bold"><span>Total</span><span className="text-green-600">R$ {total.toFixed(2)}</span></div>
-                  </CardContent>
-                  <CardFooter>
-                    <Button onClick={handleCheckout} className="w-full bg-green-600 hover:bg-green-700 h-12 text-lg">
-                      <CreditCard className="w-5 h-5 mr-2" />
-                      Finalizar Compra
-                    </Button>
-                  </CardFooter>
-                </Card>
-                <Card className="bg-white shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-xl"><Gift className="w-5 h-5 mr-2 text-green-600" /> Cupom de Desconto</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex space-x-2">
-                      <Input placeholder="Digite o seu cupom" value={couponCode} onChange={(e) => setCouponCode(e.target.value)} />
-                      <Button onClick={applyCoupon} variant="outline">Aplicar</Button>
-                    </div>
-                    {appliedCoupon && <p className="text-green-600 text-sm mt-2">Cupom {appliedCoupon.code} aplicado!</p>}
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            </>
           )}
         </div>
       </main>
 
-      {/* EFEITO SEPARADOR PARA O RODAPÉ */}
+      {/* EFEITO SEPARADOR PARA O RODAPÉ QUANDO O CARRINHO ESTÁ VAZIO */}
       {!hasItems && (
          <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
       )}
