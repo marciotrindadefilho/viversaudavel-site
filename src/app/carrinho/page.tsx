@@ -113,14 +113,14 @@ export default function CartPage() {
             <div className="absolute inset-0 z-0">
               <Image 
                 src="/img-carrinho.png" 
-                alt="Mulher meditando em um ambiente sereno para representar bem-estar"
+                alt="Viver Saudável"
                 fill 
                 className="object-cover"
                 quality={80}
               />
             </div>
             {/* Camada 2: Overlay de Gradiente para Harmonização e Legibilidade */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-transparent/80 via-transparent/60 to-transparent"></div>
           </>
         )}
         
@@ -143,8 +143,8 @@ export default function CartPage() {
           {!hasItems ? (
             // --- SEÇÃO DE CARRINHO VAZIO ---
             <div className="flex flex-col items-center justify-center min-h-[60vh] text-center text-white px-4">
-              <ShoppingBag className="w-20 h-20 md:w-24 md:h-24 text-gray-400/80 mb-6" strokeWidth={1.5} />
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <ShoppingBag className="w-20 h-20 md:w-24 md:h-24 text-gray-400/80 mb-2" strokeWidth={1.5} />
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-12">
                 Seu carrinho está vazio
               </h1>
               <p className="max-w-md text-base md:text-lg text-gray-300 mb-8">
