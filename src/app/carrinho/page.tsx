@@ -140,9 +140,9 @@ export default function CartPage() {
 
           {!hasItems ? (
             <div className="text-center py-24">
-              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto -mb-6" />
-              <h1 className="text-xl font-weight 700 text-gray-100 mb-4">O seu carrinho está vazio</h1>
-              <p className="text-base font-weight 400 text-gray-200 mb-8">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
+              <ShoppingBag className="w-24 h-24 text-gray-400 mx-auto mb-32" />
+              <h1 className="text-xl font-weight 700 text-gray-100 mb-6">O seu carrinho está vazio</h1>
+              <p className="text-base font-weight 400 text-gray-200 mb-12">Parece que ainda não adicionou nenhum produto. Que tal começar agora?</p>
               <Link href="/">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700">
                   <ArrowLeft className="w-5 h-5 mr-2" />
