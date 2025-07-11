@@ -130,7 +130,7 @@ export default function ebooksLibraryPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">E-books em Destaque</h2>
-            <p className="text-lg text-gray-600">Os mais ouvidos e bem avaliados da nossa biblioteca.</p>
+            <p className="text-lg text-gray-600">Os mais lidos e bem avaliados da nossa biblioteca.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredEbooks.map((ebook) => (
@@ -150,7 +150,7 @@ export default function ebooksLibraryPage() {
                   </div>
                   <Button className="w-full bg-green-600 hover:bg-green-700 rounded-lg">
                     <Play className="w-4 h-4 mr-2" />
-                    {ebook.premium ? "Ouvir (Premium)" : "Ouvir Grátis"}
+                    {ebook.premium ? "Ler (Premium)" : "Ler Grátis"}
                   </Button>
                 </CardContent>
               </Card>
