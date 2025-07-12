@@ -69,7 +69,7 @@ export default function BlogLibraryPage() {
                   <Play className="w-5 h-5 mr-2" />
                   Começar a Ouvir
                 </Button>
-              </a>
+               </a>
               <Link href="/planos">
                 <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
                   Ver Planos Premium
