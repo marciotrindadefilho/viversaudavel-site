@@ -20,7 +20,7 @@ export default function Home() {
       <Ebooks />
       <Audiobooks />
       <Blog />
-      <Podcast/>
+      <Podcasts />
       <Testimonials />
       <Footer />
     </div>
