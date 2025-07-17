@@ -7,6 +7,8 @@ import Blog from "@/components/blog"
 import Testimonials from "@/components/testimonials"
 import Footer from "@/components/footer"
 import Audiobooks from "@/components/audiobooks"
+import Podcasts from "@/components/podcasts"
+import { Podcast } from "lucide-react"
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
       <Ebooks />
       <Audiobooks />
       <Blog />
+      <Podcast/>
       <Testimonials />
       <Footer />
     </div>
