@@ -9,8 +9,7 @@ import { Search, Headphones, Play, Star, Clock, Volume2 } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-export default function PodcastLibraryPage() {
-  // Dados das categorias (mantidos)
+export default function PodcastPage() {
   const categories = [
     { name: "Ortopedia", description: "Lesões musculares, articulares, fraturas...", image: "/orto.png", count: 18 },
     { name: "Neurologia", description: "AVC, Parkinson, esclerose múltipla...", image: "/neuro.png", count: 14 },
@@ -20,7 +19,6 @@ export default function PodcastLibraryPage() {
     { name: "Geriatria", description: "Reabilitação em idosos, quedas...", image: "/fisio5.png", count: 16 },
   ]
 
-  // Dados dos audiobooks em destaque (mantidos)
   const featuredPodcasts = [
     { title: "Fundamentos da Fisioterapia Ortopédica", narrator: "Dra. Georgia Espinola Moura", category: "Ortopedia", duration: "4h 32min", rating: 4.9, listeners: 850, image: "/fisio3.png", premium: true },
     { title: "Neuroplasticidade e Reabilitação", narrator: "Dra. Georgia Espinola Moura", category: "Neurologia", duration: "3h 45min", rating: 4.8, listeners: 620, image: "/fisio2.png", premium: true },
