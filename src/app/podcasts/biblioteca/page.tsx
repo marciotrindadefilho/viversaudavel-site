@@ -9,7 +9,7 @@ import { Search, Headphones, Play, Star, Clock, Volume2 } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
-export default function PodcastPage() {
+export default function PodcastsLibraryPage() {
   const categories = [
     { name: "Ortopedia", description: "Lesões musculares, articulares, fraturas...", image: "/orto.png", count: 18 },
     { name: "Neurologia", description: "AVC, Parkinson, esclerose múltipla...", image: "/neuro.png", count: 14 },
@@ -46,7 +46,7 @@ export default function PodcastPage() {
           <div className="max-w-4xl mx-auto">
             <div className="flex justify-center mb-6">
                <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                <Image src="/headphone.png" alt="Ícone de fones de ouvido" width={70} height={70} />
+                <Image src="/podcast.png" alt="Ícone de fones de ouvido" width={70} height={70} />
               </div>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-32">
