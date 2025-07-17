@@ -64,21 +64,21 @@ export default function BlogLibraryPage() {
               Artigos, dicas e insights para uma vida mais ativa, plena e saudável após os 50 anos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#podcasts">
-                <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
-                  <Play className="w-5 h-5 mr-2" />
+              <a href="#audiobooks">
+              <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
+                <Play className="w-5 h-5 mr-2" />
                   Começar a Ouvir
-                </Button>
-               </a>
-              <Link href="/planos">
-                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
-                  Ver Planos Premium
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+                    </Button>
+                  </a>
+                  <Link href="/planos">
+                   <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+                    Ver Planos Premium
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+          </section>
 
       {/* ===== 2. SEARCH AND FILTERS ===== */}
       <section className="py-12 bg-gray-50 border-y border-gray-200">

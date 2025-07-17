@@ -40,7 +40,7 @@ export default function Footer() {
               <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
               <li><a href="/mais/depoimentos" className="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
               <li><a href="/planos" className="text-gray-300 hover:text-white transition-colors">Nossos Planos</a></li>
-              <li><a href="/podcasts" className="text-gray-300 hover:text-white transition-colors">Nossos Podcasts</a></li>
+              <li><a href="/podcasts/biblioteca" className="text-gray-300 hover:text-white transition-colors">Nossos Podcasts</a></li>
             </ul>
           </div>
 
@@ -48,10 +48,10 @@ export default function Footer() {
           <div>
             <h3 className="text-green-400 font-semibold mb-4">Categorias</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Cardiorrespiratória</a></li>
+              <li><a href="/e-books/biblioteca" className="text-gray-300 hover:text-white transition-colors">Cardiorrespiratória</a></li>
               <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Nutrição</a></li>
-              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Saúde Mental</a></li>
-              <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Prevenção</a></li>
+              <li><a href="/audiobooks/biblioteca" className="text-gray-300 hover:text-white transition-colors">Saúde Mental</a></li>
+              <li><a href="/podcasts/biblioteca" className="text-gray-300 hover:text-white transition-colors">Prevenção</a></li>
             </ul>
           </div>
 
