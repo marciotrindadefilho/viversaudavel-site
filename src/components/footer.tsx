@@ -40,7 +40,7 @@ export default function Footer() {
               <li><a href="/mais/blog" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
               <li><a href="/mais/depoimentos" className="text-gray-300 hover:text-white transition-colors">Depoimentos</a></li>
               <li><a href="/planos" className="text-gray-300 hover:text-white transition-colors">Nossos Planos</a></li>
-              <li><a href="/podcast" className="text-gray-300 hover:text-white transition-colors">Nossos Podcasts</a></li>
+              <li><a href="/podcasts" className="text-gray-300 hover:text-white transition-colors">Nossos Podcasts</a></li>
             </ul>
           </div>
 
