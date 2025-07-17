@@ -16,7 +16,7 @@ import Footer from "@/components/footer"
 interface CartItem {
   id: number;
   title: string;
-  type: "E-book" | "Audiobook" | "Assinatura";
+  type: "E-book" | "Audiobook" | "Podcast" | "Assinatura";
   price: number;
   originalPrice?: number;
   quantity: number;
@@ -32,14 +32,13 @@ interface NotificationState {
 }
 
 export default function CartPage() {
-  // --- STATE MANAGEMENT ---
+
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [couponCode, setCouponCode] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState<{ code: string; discount: number } | null>(null);
   const [notification, setNotification] = useState<NotificationState | null>(null);
-  const [isCheckingOut, setIsCheckingOut] = useState(false); // Estado para o processo de checkout
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
 
-  // --- HANDLERS E FUNÇÕES ---
   const showNotification = (message: string, type: 'success' | 'error') => {
     setNotification({ message, type });
     setTimeout(() => {
@@ -76,12 +75,12 @@ export default function CartPage() {
   };
   
   const handleCheckout = () => {
-    if (isCheckingOut) return; // Previne cliques duplos
+    if (isCheckingOut) return;
 
     setIsCheckingOut(true);
     showNotification("Redirecionando para o pagamento...", "success");
 
-    // Simula uma chamada de API e redirecionamento
+    
     setTimeout(() => {
       console.log("Iniciando processo de checkout...");
       console.log("Itens no carrinho:", cartItems);
@@ -91,15 +90,14 @@ export default function CartPage() {
     }, 2000);
   };
 
-  // --- CÁLCULOS ---
+  
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const savings = cartItems.reduce((sum, item) => sum + ((item.originalPrice || item.price) - item.price) * item.quantity, 0);
   const couponDiscount = appliedCoupon ? (subtotal * appliedCoupon.discount) / 100 : 0;
   const total = subtotal - couponDiscount;
 
-  // --- LÓGICA DE RENDERIZAÇÃO DINÂMICA ---
   const hasItems = cartItems.length > 0;
-  const mainBgClass = hasItems ? 'bg-gray-50' : 'bg-black'; // Fundo cinza claro com itens, preto quando vazio
+  const mainBgClass = hasItems ? 'bg-gray-50' : 'bg-black'; 
 
   return (
     <div className={`flex flex-col min-h-screen ${mainBgClass}`}>

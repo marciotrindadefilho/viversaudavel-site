@@ -40,17 +40,17 @@ export default function TestimonialsPage() {
  
        {/* ===== 1. HERO SECTION ===== */}
        <section className="relative py-20">
-         <div className="absolute inset-0 z-0">
-           <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-           <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
-         </div>
-         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-           <div className="max-w-4xl mx-auto">
-             <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                 <Image src="/headphone.png" alt="Ícone de fones de ouvido" width={70} height={70} />
+          <div className="absolute inset-0 z-0">
+              <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
                </div>
-             </div>
+               <div className="relative z-10 container mx-auto px-4 text-center text-white">
+                 <div className="max-w-4xl mx-auto">
+                   <div className="flex justify-center mb-6">
+                  <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                  <Image src="/depoimentos.png" alt="Ícone de fones de ouvido" width={90} height={90} />
+                </div>
+              </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Depoimentos</h1>
                   <p className="text-xl md:text-2xl mb-8 leading-relaxed">
                    Histórias reais de pessoas que transformaram suas vidas com nossos conteúdos
