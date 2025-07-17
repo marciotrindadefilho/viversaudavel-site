@@ -126,7 +126,7 @@ export default function PodcastPage() {
       <section className="py-20 bg-gray-50 border-y border-gray-200">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Audiobooks em Destaque</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Podcasts em Destaque</h2>
             <p className="text-lg text-gray-600">Os mais ouvidos e bem avaliados da nossa biblioteca.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
