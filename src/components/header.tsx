@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabaseClient"
+import { supabase } from "@/lib/supabaseClient"
 import { Menu, Search, ShoppingCart, User, UserPlus, ChevronDown, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -30,7 +30,6 @@ type MenuItem = {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [user, setUser] = useState<UserProfile | null>(null)
-  const supabase = createClient()
   const router = useRouter()
 
   useEffect(() => {

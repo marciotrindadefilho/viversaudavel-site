@@ -2,12 +2,12 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabaseClient";
 import { Database } from "@/types/supabase";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Star, Volume2, Play } from "lucide-react";
+import { Clock, Star, Headphones, Play, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -15,19 +15,24 @@ import Footer from "@/components/footer";
 type Produto = Database["public"]["Tables"]["produtos"]["Row"];
 
 export default function PodcastsLibraryPage() {
-  const [produtos, setProdutos] = useState<Produto[]>([]);
-  const supabase = createClient();
+  const [produtos, setProdutos] = useState<Produto[]>([])
 
   useEffect(() => {
-    async function fetchProdutos() {
-      const { data } = await supabase
-        .from("produtos")
-        .select("*")
-        .eq("tipo", "podcast");
-      setProdutos(data || []);
+    const fetchProdutos = async () => {
+      const { data, error } = await supabase
+        .from('produtos')
+        .select('*')
+        .eq('tipo', 'podcast')
+
+      if (error) {
+        console.error('Erro ao buscar podcasts:', error)
+      } else {
+        setProdutos(data as Produto[])
+      }
     }
-    fetchProdutos();
-  }, []);
+
+    fetchProdutos()
+  }, [])
 
   return (
     <div className="min-h-screen bg-white">
