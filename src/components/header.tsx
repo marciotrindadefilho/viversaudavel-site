@@ -1,20 +1,15 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { supabase } from "@/lib/supabaseClient"
-import { Menu, Search, ShoppingCart, User, UserPlus, ChevronDown, LogOut } from "lucide-react"
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { type Database } from '@/types/supabase'
+import { Menu, ShoppingCart, User, UserPlus, ChevronDown, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import Image from "next/image"
-
-type UserProfile = {
-  id: string
-  email?: string
-}
 
 type SubMenuItem = {
   title: string
@@ -29,27 +24,10 @@ type MenuItem = {
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [user, setUser] = useState<UserProfile | null>(null)
+  const supabase = useSupabaseClient<Database>()
+  const session = useSession()
+  const user = session?.user ?? null
   const router = useRouter()
-
-  useEffect(() => {
-    const checkUser = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession()
-      setUser(session?.user ?? null)
-    }
-
-    checkUser()
-
-    const { data: authListener } = supabase.auth.onAuthStateChange((_, session) => {
-      setUser(session?.user ?? null)
-    })
-
-    return () => {
-      authListener.subscription.unsubscribe()
-    }
-  }, [])
 
   const handleSignOut = async () => {
     await supabase.auth.signOut()
@@ -67,12 +45,11 @@ export default function Header() {
       icon: "/ebook.png",
       submenu: [{ title: "Biblioteca", href: "/e-books/biblioteca" }],
     },
- {
+    {
       title: "Podcasts",
       icon: "podcast.png",
       submenu: [{ title: "Biblioteca", href: "/podcasts/biblioteca" }],
     },
-  
     {
       title: "Mais",
       submenu: [
@@ -84,14 +61,10 @@ export default function Header() {
   ]
 
   return (
-   <header className="futuristic-header relative z-50">
-      {/* Efeito de brilho futurista */}
+    <header className="futuristic-header relative z-50">
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-purple-500/10 backdrop-blur-sm"></div>
-
-      {/* AJUSTE: Reduzido o padding vertical de 'py-4' para 'py-2' para um header mais fino */}
       <div className="container mx-auto px-4 py-2 relative z-10">
         <div className="flex items-center justify-between">
-          {/* Logo com efeito futurista e fundo transparente */}
           <Link href="/" className="flex items-center group">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
@@ -99,15 +72,14 @@ export default function Header() {
                 <Image
                   src="/logo.png"
                   alt="Viver Saudável"
-                  width={180} 
-                  height={50} 
+                  width={180}
+                  height={50}
                   className="h-10 px-4 py-2 logo-transparent"
                 />
               </div>
             </div>
           </Link>
 
-          {/* Menu Desktop com design futurista */}
           <div className="hidden lg:flex items-center space-x-8">
             <nav className="flex items-center space-x-8">
               {menuItems.map((item) => (
@@ -120,7 +92,6 @@ export default function Header() {
                     <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180 duration-300" />
                   </button>
 
-                  {/* Dropdown futurista */}
                   <div className="absolute top-full left-0 mt-2 w-56 futuristic-dropdown opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                     <div className="py-3">
                       {item.submenu.map((subitem) => (
@@ -138,15 +109,13 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Navegação de usuário */}
-          <nav className="flex items-center space-x-4">
-            {/* AJUSTE: Corrigido o href para apontar para a âncora #contato */}
-            <Link href="#contato" className="futuristic-nav-link">
-              Contato
-            </Link>
-            <Link href="/carrinho" className="futuristic-nav-link">
-              <ShoppingCart className="w-5 h-5" />
-            </Link>
+            <nav className="flex items-center space-x-4">
+              <Link href="#contato" className="futuristic-nav-link">
+                Contato
+              </Link>
+              <Link href="/carrinho" className="futuristic-nav-link">
+                <ShoppingCart className="w-5 h-5" />
+              </Link>
 
               {user ? (
                 <div className="flex items-center space-x-3">
@@ -170,7 +139,6 @@ export default function Header() {
             </nav>
           </div>
 
-          {/* Menu Mobile */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon" className="futuristic-mobile-button">
