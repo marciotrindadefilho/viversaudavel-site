@@ -38,39 +38,39 @@ export default function TestimonialsPage() {
      <div className="min-h-screen bg-white">
        <Header />
  
-       {/* ===== 1. HERO SECTION ===== */}
-       <section className="relative py-20">
-          <div className="absolute inset-0 z-0">
-              <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
+      {/* ===== 1. HERO SECTION ===== */}
+             <section className="relative py-20">
+               <div className="absolute inset-0 z-0">
+                 <Image src="/img-carrinho.png" alt="Background" fill className="object-cover" />
+                 <div className="absolute inset-0 bg-gradient-to-r from-transparent-600/80 to-transparent-600/80" />
                </div>
                <div className="relative z-10 container mx-auto px-4 text-center text-white">
                  <div className="max-w-4xl mx-auto">
                    <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                  <Image src="/depoimentos.png" alt="Ícone de fones de ouvido" width={90} height={90} />
-                </div>
-              </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Depoimentos</h1>
-                  <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-                   Histórias reais de pessoas que transformaram suas vidas com nossos conteúdos
-                </p>
-                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#testimonials">
-                <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
-                  <PlayIcon className="w-5 h-5 mr-2" />
-                  Depoimentos Aqui!
-                </Button>
-               </a>
-              <Link href="/planos">
-                <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
-                  Ver Planos Premium
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+                      <div className="w-20 h-20 bg-yellow/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                       <Image src="/blog.png" alt="Ícone de fones de ouvido" width={90} height={90} />
+                     </div>
+                   </div>
+                  <h1 className="text-3xl md:text-4xl font-bold mb-32">Depoimentos</h1>
+                   <p className="text-base md:text-xl leading-relaxed mb-12">
+                    Artigos, dicas e insights para uma vida mais ativa, plena e saudável após os 50 anos
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#audiobooks">
+                    <Button size="lg" className="border-green-600 text-white-600 hover:bg-green-600 hover:text-white">
+                      <PlayIcon className="w-5 h-5 mr-2" />
+                        Depoimentos Aqui!
+                          </Button>
+                        </a>
+                        <Link href="/planos">
+                         <Button size="lg" variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+                          Ver Planos Premium
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                </section>
 
        {/* Categories */}
       <section className="py-16">
