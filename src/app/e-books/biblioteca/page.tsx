@@ -1,20 +1,17 @@
-
 'use client'
 
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
-import { Database } from "@/types/supabase";
-import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
-import { Clock, Star, Headphones, Play, Book } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import { useEffect, useState } from 'react'
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { Database } from '@/types/supabase'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 
-type Produto = Database["public"]["Tables"]["produtos"]["Row"];
+type Produto = Database['public']['Tables']['produtos']['Row']
+type Carrinho = Database['public']['Tables']['carrinho']['Insert']
 
 export default function EbooksLibraryPage() {
+  const supabase = useSupabaseClient<Database>()
+  const session = useSession()
   const [produtos, setProdutos] = useState<Produto[]>([])
 
   useEffect(() => {
@@ -22,49 +19,60 @@ export default function EbooksLibraryPage() {
       const { data, error } = await supabase
         .from('produtos')
         .select('*')
-        .eq('tipo', 'ebooks')
+        .eq('tipo', 'ebook')
 
       if (error) {
-        console.error('Erro ao buscar ebooks:', error)
+        console.error('Erro ao buscar e-books:', error)
       } else {
-        setProdutos(data as Produto[])
+        setProdutos(data)
       }
     }
 
     fetchProdutos()
-  }, [])
+  }, [supabase])
+
+  const adicionarAoCarrinho = async (produto_id: number) => {
+    if (!session?.user) {
+      alert('Você precisa estar logado para adicionar ao carrinho.')
+      return
+    }
+
+    const { error } = await supabase.from('carrinho').insert({
+      user_id: session.user.id,
+      produto_id,
+      quantidade: 1
+    } as Carrinho)
+
+    if (error) {
+      console.error('Erro ao adicionar ao carrinho:', error)
+    } else {
+      alert('Produto adicionado ao carrinho!')
+    }
+  }
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-12">E-books</h1>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {produtos.map((item) => (
-              <Card key={item.id}>
-                <div className="relative h-56">
-                  <Image src={item.imagem || ""} alt={item.titulo} fill className="object-cover" />
-                  <Badge className="absolute top-4 right-4 bg-golden-500 text-black shadow-md">Premium</Badge>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{item.titulo}</h3>
-                  <div className="flex justify-between text-sm text-gray-600 mb-6">
-                    <div className="flex items-center gap-2"><Clock className="w-4 h-4" /> 3h</div>
-                    <div className="flex items-center gap-2"><Star className="w-4 h-4 text-yellow-400" /> 4.9</div>
-                    <div className="flex items-center gap-2"><Book className="w-4 h-4" /> 500</div>
-                  </div>
-                  <Button className="w-full bg-green-600 hover:bg-green-700">
-                    <Play className="w-4 h-4 mr-2" />
-                    Ler Agora
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+    <main className="container py-10 text-center">
+      <h1 className="text-2xl font-bold mb-8">E-books</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {produtos.map((produto) => (
+          <div key={produto.id} className="bg-white rounded-lg shadow-md p-4">
+            <Image
+              src={produto.imagem || '/placeholder.svg'}
+              alt={produto.titulo}
+              width={300}
+              height={200}
+              className="object-cover rounded mb-4 w-full"
+            />
+            <h2 className="text-lg font-semibold mb-2">{produto.titulo}</h2>
+            <p className="text-sm text-gray-600 mb-4">
+              R$ {produto.preco?.toFixed(2)}
+            </p>
+            <Button onClick={() => adicionarAoCarrinho(produto.id)}>
+              Adicionar ao Carrinho
+            </Button>
           </div>
-        </div>
-      </section>
-      <Footer />
-    </div>
-  );
+        ))}
+      </div>
+    </main>
+  )
 }
